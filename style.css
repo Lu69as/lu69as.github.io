@@ -514,9 +514,7 @@ nav {
                 }
             }
 
-            &:hover {
-                background-size: 230%;
-            }
+            &:hover { background-size: 230%; }
         }
     }
 }
@@ -581,6 +579,8 @@ nav {
     > p {
         width: 66%;
         font-size: 20px;
+
+        .relevant { color: #E05C26 !important; }
 
         .btn1, .btn2 {
             font-size: 24px;
