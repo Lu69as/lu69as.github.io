@@ -35,6 +35,7 @@ document.addEventListener("scroll", () => {
 })
 document.querySelector("nav a.home").classList.add("active");
 
+
 document.querySelectorAll("#portfolio h1 div").forEach((e) => {
     e.addEventListener("click", () => {
         let items = document.querySelectorAll("#portfolio .container .item");

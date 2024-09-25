@@ -393,39 +393,26 @@ nav {
             position: relative;
             z-index: 3;
 
-            &::before, &::after {
-                content: " ";
+            svg {
                 position: absolute;
-                width: 40%;
-                height: 5px;
-                background: var(--font-color);
+                height: 40px;
+                width: 40px;
                 top: 50%; left: 50%;
-                transform: translate(-50%, -50%);
+                transform: translate(-50%, -50%) rotate(90deg);
                 transition: 400ms;
-            }
-            &::after {
-                content: " ";
-                position: absolute;
-                width: 20%;
-                height: 20%;
-                background: transparent;
-                border-top: solid 5px var(--font-color);
-                border-left: solid 5px var(--font-color);
-                top: 50%; left: 50%;
-                transform: translate(-75%, -50%) rotate(-45deg);
+
+                path { 
+                    stroke: var(--font-color); 
+                    stroke-width: 3;
+                }
             }
 
-            &.pastNextArrow::before, &.pastNextArrow::after {
-                animation: pastNextArrow 600ms;
-            }
-
-            &:active::before, &:active::after {
+            &:active svg {
                 left: 60%;
             }
         }
-        .next {
-            transform: rotate(180deg);
-        }
+        .pastNextArrow svg { animation: pastNextArrow 500ms; }
+        .next { transform: rotate(180deg); }
     }
     .container {
         --items-fit: 4;
