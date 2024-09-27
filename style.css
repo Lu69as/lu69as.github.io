@@ -10,6 +10,7 @@ html { scroll-behavior: smooth; }
     --dosis: "Dosis", sans-serif;
 
     --primary: #38d660;
+    --primary-darker: #279b44;
     --secondary: #80e5cc;
     --accent: #5eded8;
 
@@ -127,21 +128,24 @@ body {
         margin-left: 5px;
         cursor: pointer;
         color: var(--font-color);
-        background-image: url("./img/btn-gradient.svg");
         background-size: cover;
+        border: solid 4px var(--primary);
         
-        padding: 10px 5px;
+        padding: 6px 5px;
         
         min-width: max-content;
         
         span {
-            background: var(--section-bg);
             padding: 5px 10px;
             font-weight: bolder;
             transition: 200ms;
         }
     }
-    .btn2:hover span { background: transparent; color: #fff; }
+    .btn2:hover {
+        /* border-color: var(--primary-darker); */
+        background: var(--primary);
+        color: #fff;
+    }
 
     a { 
         color: var(--font-color) !important;
@@ -231,9 +235,8 @@ section {
 .navContainer > div { width: 340px; }
 nav {
     position: fixed;
-    /* background: var(--secondary); */
-    border: solid var(--accent);
-    background: #38d66030;
+    border: solid .5px var(--bg-color);
+    background: #38d66020;
     width: 300px;
     border-radius: 15px;
     padding: 20px;
@@ -346,7 +349,7 @@ nav {
             transition: 400ms;
 
             path {
-                fill: var(--font-color);
+                fill: #f3fcf4;
                 transition: 400ms;
             }
         }
@@ -445,6 +448,10 @@ nav {
             }
 
             &:hover { background-size: 110%; }
+        }
+        .item:nth-child(odd) span {
+            background: var(--font-color);
+            color: var(--bg-color);
         }
     }
 }
