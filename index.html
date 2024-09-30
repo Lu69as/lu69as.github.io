@@ -37,8 +37,8 @@
                 <a class="home" href="#">Home</a>
                 <a class="portfolio" href="#portfolio">Portefølje</a>
                 <a class="about" href="#about">Om meg</a>
-                <a href="#">Dolor</a>
-                <a href="#">Sit amet</a>
+                <a class="resume" href="#resume">Dolor</a>
+                <a class="" href="#">Sit amet</a>
             </ul>
         </nav>
     </div>
@@ -49,9 +49,14 @@
         <a class="readmore" translate="no" href="#portfolio">
           <svg width="800px" height="800px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M12 6V18M12 18L7 13M12 18L17 13" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-
-            <span>L</span><span>e</span><span>s</span><span></span>
-            <span>m</span><span>e</span><span>r</span><span></span>
+          <span>L</span><span>e</span><span>s</span><span></span>
+          <span>m</span><span>e</span><span>r</span><span></span>
+        </a>
+        <a class="readmore readmoreEng" translate="no" href="#portfolio">
+          <svg width="800px" height="800px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 6V18M12 18L7 13M12 18L17 13" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span>R</span><span>e</span><span>a</span><span>d</span><span></span>
+          <span>m</span><span>o</span><span>r</span><span>e</span><span></span>
         </a>
         <h1>
           <span>Lukas</span> <br>
@@ -122,16 +127,23 @@
         <h1>Utvalgt arbeid</h1>
         <div class="container">
           <div class="item" style="background-image: url('./img/portfolio/voting-site.jpg');">
-            <span>ASP.net C#</span>
-            <span>MySQL</span>
+            <div>
+              <span>ASP.net C#</span>
+              <span>MySQL</span>
+          </div>  
           </div>
           <div class="item" style="background-image: url('./img/portfolio/react-site.jpg');">
-            <span>React JS</span>
-            <span>SCSS</span>
+            <div>
+              <span>React JS</span>
+              <span>SCSS</span>
+          </div>  
           </div>
           <div class="item" style="background-image: url('./img/portfolio/komfort-solskjerming.jpg');">
-            <span>WordPress</span>
-            <span>MySQL</span>
+            <div>
+              <img class="relevant" src="./img/portfolio/relevant.png">
+              <span>WordPress</span>
+              <span>MySQL</span>
+            </div>  
           </div>
         </div>
         <!-- <div class="container">
@@ -145,17 +157,16 @@
         <h1>Om Meg</h1>
         <div class="desc-container">
           <div class="desc">
-            
-            <h2>10+</h2>
-            <h3>Fornøyde kunder</h3>
-          </div>
-          <div class="desc">
             <h2><img src onerror="this.parentElement.innerHTML = new Date().getFullYear() - 2023 + '+'"></h2>
             <h3>År med erfaring</h3>
           </div>
           <div class="desc">
             <h2>40+</h2>
             <h3>Nettsider laget</h3>
+          </div>
+          <div class="desc">
+            <h2>10+</h2>
+            <h3>Fornøyde kunder</h3>
           </div>
         </div>
         <div class="astrix"><p translate="no">- Astrix</p></div>
@@ -180,37 +191,44 @@
         </p>
         <div class="skills">
           <div style="--span-width:95%;--gradient-color:#32d832;">
-            <span title="95%">
+            <div class="border"></div>
+            <span title="Proficient">
               <h3>CSS</h3>
             </span>
           </div>
           <div style="--span-width:85%;--gradient-color:#82d832;">
-            <span title="85%">
+            <div class="border"></div>
+            <span title="Skilled">
               <h3>Javascript</h3>
             </span>
           </div>
           <div style="--span-width:70%;--gradient-color:#bad832;">
-            <span title="70%">
+            <div class="border"></div>
+            <span title="Adept">
               <h3>WordPress</h3>
             </span>
           </div>
           <div style="--span-width:90%;--gradient-color:#74d832;">
-            <span title="90%">
+            <div class="border"></div>
+            <span title="Skilled">
               <h3>BannerWise</h3>
             </span>
           </div>
           <div style="--span-width:55%;--gradient-color:#d8cd32;">
-            <span title="55%">
+            <div class="border"></div>
+            <span title="Competent">
               <h3>C#</h3>
             </span>
           </div>
           <div style="--span-width:65%;--gradient-color:#bfd832;">
-            <span title="65%">
+            <div class="border"></div>
+            <span title="Competent">
               <h3>SQL</h3>
             </span>
           </div>
-          <div style="--span-width:40%;--gradient-color:#d8ac32;">
-            <span title="40%">
+          <div style="--span-width:40%;--gradient-color:#d89032;">
+            <div class="border"></div>
+            <span title="Novice">
               <h3>PHP</h3>
             </span>
           </div>
