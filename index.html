@@ -43,6 +43,11 @@
         </nav>
     </div>
 
+    <div class="portfolioDesc">
+      <div class="img" style="background-image: url('./img/portfolio/voting-site.jpg');"></div>
+      <div></div>
+    </div>
+
     <section>
       <article id="home">
         <img src="./img/back.png" class="background">
@@ -126,24 +131,46 @@
       <article id="portfolio">
         <h1>Utvalgt arbeid</h1>
         <div class="container">
-          <div class="item" style="background-image: url('./img/portfolio/voting-site.jpg');">
-            <div>
+          <div class="item">
+            <div class="back" style="background-image: url('./img/portfolio/voting-site.jpg');"></div>
               <span>ASP.net C#</span>
               <span>MySQL</span>
-          </div>  
+
+              <a href="https://github.com/lu69as/voting-site" target="_blank" rel="noreferrer">Link</a>
+            <p>
+              En nettside jeg fikk på skolen som fort ble til et lidenskapsprosjekt.<br><br>
+              Denne nettsiden har mange funksjoner og egenskaper jeg er stolt over:<br><br>
+              <ul>
+                <li>En sjekk for fødselsnummer så ingen for stemt mer enn en gang eller lagt inn falske stemmer.</li>
+                <li>En admin funksjon som legger inn tilfeldige stemmer, men som bestemmer et par partier som får mesteparten av stemmene.</li>
+                <li>En visuelt fin reultat side som kan vise nasjonale og kommunale stemmeresultater.</li>
+              </ul>
+            </p>
           </div>
-          <div class="item" style="background-image: url('./img/portfolio/react-site.jpg');">
-            <div>
-              <span>React JS</span>
-              <span>SCSS</span>
-          </div>  
+          <div class="item">
+            <div class="back" style="background-image: url('./img/portfolio/react-site.jpg');"></div>
+            <span>React JS</span>
+            <span>SCSS</span>
+
+            <a href="https://github.com/lu69as/website-v2" target="_blank" rel="noreferrer">Link</a>
+            <p>
+              En personling nettside hvor jeg valgte å lære meg React rammeverket. <br><br>
+              Jeg endte opp med å forstå relativt mye av hvordan det funker og hvis 
+              jeg hadde fått en fremtidig oppgave hvor det kreves å bruke et javascript rammeverk, vet jeg at dette prosjektet kommer til å hjelpe.
+            </p>
           </div>
-          <div class="item" style="background-image: url('./img/portfolio/komfort-solskjerming.jpg');">
-            <div>
-              <img class="relevant" src="./img/portfolio/relevant.png">
-              <span>WordPress</span>
-              <span>MySQL</span>
-            </div>  
+          <div class="item">
+            <div class="back" style="background-image: url('./img/portfolio/komfort-solskjerming.jpg');"></div>
+            <img class="relevant" src="./img/portfolio/relevant.png">
+            <span>WordPress</span>
+            <span>MySQL</span>
+
+            <a href="https://github.com/lu69as/voting-site" target="_blank" rel="noreferrer">Link</a>
+            <p>
+              Mitt første egne nettsideprosjekt hos Relevant hvor jeg var med / ledet alle deler fra produksjon til publisering. <br><br>
+              Av å publisere denne siden lærte jeg mye om optimalisering og å gjøre nettsiden klar for masse brukere. <br><br>
+              Jeg er veldig stolt av hvordan nettsiden endte opp og det bled kunden og.
+            </p>
           </div>
         </div>
         <!-- <div class="container">
@@ -169,26 +196,28 @@
             <h3>Fornøyde kunder</h3>
           </div>
         </div>
-        <div class="astrix"><p translate="no">- Astrix</p></div>
-        <p>
-          Jeg er en <b><span>
-            <img src onerror="this.parentElement.innerHTML = new Date().getFullYear() - 2006">
-          </span> år gammel gutt</b> som jobber innen prgramming, for det meste <b>front-end</b> programmering, men til tider også back-end.
-          Jeg bor i Sellebakk, Fredrikstad og jobber for øyeblikket som lærling hos <a class="relevant" href="https://relevant.no" target="_blank">Relevant</a> reklamebyrå.
-          <br><br>
-
-          Jeg er en veldig effektiv og selvstendig arbeider som kan få my gjort uten mye hjelp, men er også god på å sammerbeide med andre når det kreves.
-          <br><br>
-
-          På fritiden min spiller jeg ofte videospill hvor favorittkategorien er racing. 
-          Jeg er også en stro fan av Formel 1 både innen spill og sporten.
-          En annen hobby jeg gjør fra tid til tid er å lage <a href="https://youtube.com/@lu69as" target="_blank">YouTube</a> videoer,
-          hvor jeg har blitt ganske god på video og bilderedigering.
-          <br><br>
-
-          <a href="#contakt" class="btn1"><span>Kontakt meg</span></a>
-          <a href="./img/about/cv.pdf" download="cv" class="btn2"><span>Last ned CV</span></a>
-        </p>
+        <div>
+          <div class="astrix"><p translate="no">- Astrix</p></div>
+          <p>
+            Jeg er en <b><span>
+              <img src onerror="this.parentElement.innerHTML = new Date().getFullYear() - 2006">
+            </span> år gammel gutt</b> som jobber innen prgramming, for det meste <b>front-end</b> programmering, men til tider også back-end.
+            Jeg bor i Sellebakk, Fredrikstad og jobber for øyeblikket som lærling hos <a class="relevant" href="https://relevant.no" target="_blank">Relevant</a> reklamebyrå.
+            <br><br>
+  
+            Jeg er en veldig effektiv og selvstendig arbeider som kan få my gjort uten mye hjelp, men er også god på å sammerbeide med andre når det kreves.
+            <br><br>
+  
+            På fritiden min spiller jeg ofte videospill hvor favorittkategorien er racing. 
+            Jeg er også en stro fan av Formel 1 både innen spill og sporten.
+            En annen hobby jeg gjør fra tid til tid er å lage <a href="https://youtube.com/@lu69as" target="_blank">YouTube</a> videoer,
+            hvor jeg har blitt ganske god på video og bilderedigering.
+            <br><br>
+  
+            <a href="#contakt" class="btn1"><span>Kontakt meg</span></a>
+            <a href="./img/about/cv.pdf" download="cv" class="btn2"><span>Last ned CV</span></a>
+          </p>
+        </div>
         <div class="skills">
           <div style="--span-width:95%;--gradient-color:#32d832;">
             <div class="border"></div>

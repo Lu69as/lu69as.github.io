@@ -250,6 +250,7 @@ nav {
     display: flex;
     flex-direction: column;
     row-gap: 15px;
+    z-index: 5;
 
     .lang, .colorMode {
         position: absolute;
@@ -424,6 +425,99 @@ nav {
 }
 @keyframes readmoreArrow { 50% { transform: translate(-35%, -60%); } }
 
+.portfolioDesc {
+    border-radius: 0 !important;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    background: #33333390;
+    backdrop-filter: blur(2px);
+
+    opacity: 0;
+    pointer-events: none;
+
+    .img {
+        opacity: 0;
+        aspect-ratio: 1;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        background-size: 105%;
+        background-position: center;
+        border-radius: 0;
+        transition: none;
+    }
+
+    
+    > div:not(.img) {
+        height: fit-content;
+        border: solid 2px var(--bg-color);
+        padding: 20px;
+        min-height: 40px;
+        overflow: hidden;
+        
+        left: 50%;
+        top: calc(40vh + 140px);
+        transform: translateX(-50%);
+        position: relative;
+        opacity: 0;
+
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        
+        &::before {
+            content: " ";
+            width: 100%;
+            height: 100%;
+            background: var(--bg-color);
+            position: absolute;
+            opacity: .6;
+            left: 0; top: 0;
+            z-index: -1;
+        }
+
+        .relevant { display: none; }
+        
+        span, a {
+            padding: 5px 15px;
+            width: fit-content;
+            position: relative;
+            border-radius: 9em;
+            background: var(--font-color);
+            color: var(--bg-color) !important;
+            transform: translateX(-10px);
+
+            &::before { content: none; }
+        }
+
+        p {
+            font-size: 18px;
+            width: 100%;
+        }
+    }
+
+    &.active {
+        opacity: 1;
+        pointer-events: all;
+
+        .img {
+            height: 40vh;
+            top: 35px !important;
+            left: 50% !important;
+            transform: translateX(-50%);
+            transition: 600ms !important;
+        }
+
+        > div {
+            opacity: 1;
+        }
+    }
+}
+
 #portfolio {
     .container {
         position: relative;
@@ -433,7 +527,6 @@ nav {
 
         .item {
             cursor: pointer;
-            overflow: hidden;
             aspect-ratio: 1;
             width: 100%;
             position: relative;
@@ -444,20 +537,31 @@ nav {
             align-items: end;
             gap: 10px;
 
-            background-size: 120%;
-            background-position: center;
+            
+            .back {
+                position: absolute;
+                height: 100%;
+                aspect-ratio: 1;
+                left: 50%; top: 50%;
+                transform: translate(-50%, -50%);
+
+                background-position: center;
+                background-size: 120%;
+            }
 
             span {
                 padding: 5px 15px;
-                width: fit-content;
+                min-width: max-content;
                 position: relative;
                 border-radius: 9em;
                 background: var(--bg-color);
             }
 
-            &:hover { 
-                background-size: 110%; 
-                scale: 1.05;transform: translate(10px, -10px) scale(.95);
+            a, p { display: none; }
+
+            &:hover > .back { 
+                background-size: 105%;
+                height: 104%;
             }
 
             .relevant {
@@ -545,73 +649,79 @@ nav {
         }
     }
 
-    .astrix {
-        position: relative;
-        display: block;
+    div:has(.astrix) {
         display: flex;
-        align-items: end;
-        padding: 25px;
+        width: 100%;
+        column-gap: 35px;
 
-        width: calc(33% - 80px);
-        margin-top: 10px;
-        margin-left: 10px;
-        aspect-ratio: 1;
-
-        cursor: url('./img/about/cute-cursor.png'), pointer;
-
-        background: url(./img/astrix.jpg);
-        background-size: 100%;
-        background-position: 80% 10%;
-
-        &::before, &::after {
-            content: " ";
-            width: 100%;
-            height: 100%;
-            border-radius: inherit;
-            position: absolute;
+        .astrix {
+            position: relative;
+            display: block;
+            display: flex;
+            align-items: end;
+            padding: 25px;
+    
+            width: calc(33% - 80px);
+            margin-top: 10px;
+            margin-left: 10px;
+            aspect-ratio: 1;
+    
+            cursor: url('./img/about/cute-cursor.png'), pointer;
+    
+            background: url(./img/astrix.jpg);
+            background-size: 100%;
+            background-position: 80% 10%;
+    
+            &::before, &::after {
+                content: " ";
+                width: 100%;
+                height: 100%;
+                border-radius: inherit;
+                position: absolute;
+            }
+    
+            &::before {
+                bottom: 0; left: 0;
+                background: linear-gradient(to top, #030c0480, transparent 25%);
+            }
+            &::after {
+                width: calc(100% - 2px);
+                height: calc(100% - 2px);
+                left: -9.5px;
+                top: -9.5px;
+                border: solid .5px var(--bg-color);
+                z-index: -1;
+                transition: 400ms;
+            }
+    
+            p {
+                color: var(--primary);
+                font-family: var(--bagel);
+                font-size: 60px;
+                text-shadow: -5px 5px #030c04;
+            }
+    
+            &:hover {
+                width: calc(33% - 70px);
+                margin-top: 0;
+                margin-left: 0;
+    
+                &::after { left: 0; top: 0; }
+            }
         }
-
-        &::before {
-            bottom: 0; left: 0;
-            background: linear-gradient(to top, #030c0480, transparent 25%);
-        }
-        &::after {
-            width: calc(100% - 2px);
-            height: calc(100% - 2px);
-            left: -9.5px;
-            top: -9.5px;
-            border: solid .5px var(--bg-color);
-            z-index: -1;
-            transition: 400ms;
-        }
-
-        p {
-            color: var(--primary);
-            font-family: var(--bagel);
-            font-size: 60px;
-            text-shadow: -5px 5px #030c04;
-        }
-
-        &:hover {
-            width: calc(33% - 70px);
-            margin-top: 0;
-            margin-left: 0;
-
-            &::after { left: 0; top: 0; }
+    
+        > p {
+            padding-top: 15px;
+            width: calc(66% - 42px);
+            font-size: 20px;
+    
+            .btn1, .btn2 {
+                font-size: 24px;
+                display: inline-block;
+            }
         }
     }
 
-    > p {
-        /* background: var(--section-secondary); */
-        padding: 20px;
-        width: calc(66% - 41px);
-        font-size: 20px;
-
-        .btn1, .btn2 {
-            font-size: 24px;
-            display: inline-block;
-        }
-    }
 
     .skills {
         width: 100%;
@@ -659,7 +769,6 @@ nav {
             }
 
             > span {
-                border-radius: 0;
                 width: calc(var(--span-width) - 30px);
                 backdrop-filter: blur(20px);
                 padding: 10px 15px;

@@ -63,7 +63,7 @@ document.addEventListener("scroll", () => {
         document.querySelectorAll("#home .readmore span")[i].style.transform = `rotate(${i * 11 + window.scrollY / 3}deg)`;
     
     document.querySelectorAll("section article").forEach((e) => {
-        if (e.getBoundingClientRect().y < (window.innerHeight - 200)) {
+        if (e.getBoundingClientRect().y < 500) {
             document.querySelectorAll("nav a").forEach((a) => { a.classList.remove("active") });
             document.querySelector("nav a." + e.id).classList.add("active")
         }
@@ -72,3 +72,41 @@ document.addEventListener("scroll", () => {
 })
 
 document.querySelector("nav a.home").classList.add("active");
+
+// document.querySelector(".portfolioDesc").addEventListener("click", () => {
+//     document.querySelector(".portfolioDesc").classList.remove("active");
+//     document.querySelector(".portfolioDesc .img").style.transition = "600ms";
+//     setTimeout(() => { document.querySelector(".portfolioDesc .img").style.transition = "none"; }, 600);
+// })
+document.querySelector(".portfolioDesc").addEventListener("click", portfolioDescClick)
+function portfolioDescClick(e) {
+    if (e.target.classList[0] == "portfolioDesc") {
+        document.querySelector(".portfolioDesc").classList.remove("active");
+        document.querySelector(".portfolioDesc .img").style.transition = "600ms";
+        setTimeout(() => { document.querySelector(".portfolioDesc .img").style.transition = "none"; }, 600);
+    }
+}
+// document.querySelector(".portfolioDesc").addEventListener("click", (e) => {
+//     var evt = e ? e : window.event;
+
+//     if (evt.stopPropagation) {evt.stopPropagation();}
+//     else {evt.cancelBubble=true;}
+//     return false;
+// })
+document.querySelectorAll("#portfolio .item").forEach((e) => {
+    e.addEventListener("click", () => {
+        let portfolioDesc = document.querySelector(".portfolioDesc");
+
+        portfolioDesc.firstElementChild.style.top = e.firstElementChild.getBoundingClientRect().y + "px";
+        portfolioDesc.firstElementChild.style.left = e.firstElementChild.getBoundingClientRect().x + "px";
+        portfolioDesc.firstElementChild.style.backgroundImage = e.firstElementChild.style.backgroundImage;
+        portfolioDesc.firstElementChild.style.height = e.firstElementChild.offsetHeight + "px";
+
+        portfolioDesc.lastElementChild.style.width = e.firstElementChild.offsetHeight + "px";
+        portfolioDesc.lastElementChild.innerHTML = e.innerHTML;
+
+        setTimeout(() => {
+            portfolioDesc.classList.add("active")
+        }, 20);
+    })
+})
