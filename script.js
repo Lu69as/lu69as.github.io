@@ -2,9 +2,8 @@ if (localStorage.getItem("color") == "moon")
     document.body.classList.add("dark-mode");
 
 let checkLang = setInterval(() => {
-    if (window.location.href.includes("no|en") || document.querySelector("#about > p").innerHTML[0, 1] == "f")
+    if (window.location.href.includes("no|en") || document.querySelector("#about > div > p").innerHTML[0, 1] == "f")
         document.body.classList.add("english");
-    console.log("lol")
 }, 200);
 setTimeout(() => { clearInterval(checkLang); }, 1100);
 
@@ -97,10 +96,12 @@ document.querySelectorAll("#portfolio .item").forEach((e) => {
     e.addEventListener("click", () => {
         let portfolioDesc = document.querySelector(".portfolioDesc");
 
-        portfolioDesc.firstElementChild.style.top = e.firstElementChild.getBoundingClientRect().y + "px";
-        portfolioDesc.firstElementChild.style.left = e.firstElementChild.getBoundingClientRect().x + "px";
-        portfolioDesc.firstElementChild.style.backgroundImage = e.firstElementChild.style.backgroundImage;
-        portfolioDesc.firstElementChild.style.height = e.firstElementChild.offsetHeight + "px";
+        portfolioDesc.firstElementChild.setAttribute("style", `
+            top: ${e.firstElementChild.getBoundingClientRect().y}px;
+            left: ${e.firstElementChild.getBoundingClientRect().x}px;
+            background-image: ${e.firstElementChild.style.backgroundImage};
+            height: ${e.firstElementChild.offsetHeight}px;
+        `);
 
         portfolioDesc.lastElementChild.style.width = e.firstElementChild.offsetHeight + "px";
         portfolioDesc.lastElementChild.innerHTML = e.innerHTML;

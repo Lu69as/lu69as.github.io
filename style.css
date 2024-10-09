@@ -87,6 +87,7 @@ body {
 
     :not(.background) {
         transition: 400ms;
+        transition-delay: 0ms;
         font-family: "Noto Sans Old Sogdian", system-ui;
         margin: 0;
         text-decoration: none;
@@ -143,7 +144,7 @@ body {
         min-width: max-content;
         
         span {
-            color: var(--primary-darker);
+            color: #eee;
             padding: 5px 10px;
             font-weight: bolder;
             transition: 200ms;
@@ -151,7 +152,6 @@ body {
     }
     .btn2:hover {
         background: var(--primary-darker);
-        span { color: #fff; }
     }
 
     a { 
@@ -721,66 +721,152 @@ nav {
             }
         }
     }
+}
 
+#resume {
+    h2 {
+        font-family: var(--dosis);
+        font-weight: bold;
+        font-size: 36px;
+        margin-top: 80px;
+        margin-bottom: 35px;
+    }
+    table {
+        tr {
+            padding: 40px 0;
+            display: block;
+            border-radius: 0;
+            border-top: solid 1px var(--bg-color);
+            column-gap: 40px;
 
-    .skills {
-        width: 100%;
+            td {
+                vertical-align: top;
+                font-size: 18px;
+            }
+
+            td:nth-child(1) {
+                min-width: 8vw;
+                font-size: 15px;
+            }
+            td:nth-child(2) {
+                min-width: 25vw;
+                span { 
+                    font-size: 25px; 
+                    font-family: var(--bagel);
+                    line-height: 0%;
+                }
+            }
+
+            
+        }
+    }
+
+    .tools {
         display: flex;
         flex-wrap: wrap;
         gap: 35px;
 
         > div {
-            --span-width: 100;
-            --gradient-color: #38d660;
-            
+            border: solid .5px var(--bg-color);
+            width: 220px;
+            height: 140px;
+            padding: 40px;
             position: relative;
             overflow: hidden;
-            width: calc(25% - 27px);
-            
-            &::before, &::after {
-                top: 0;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 25px;
+
+            &::before {
                 content: " ";
-                position: absolute;
+                width: 100%;
                 height: 100%;
-                width: var(--span-width);
-                --rotate-grad: -40deg;
-                background: linear-gradient(var(--rotate-grad), transparent, var(--gradient-color) 60%);
-            }
-            &::after {
-                background: linear-gradient(var(--rotate-grad), var(--gradient-color), transparent 60%);
-                filter: hue-rotate(10deg);
-            }
-
-            .border {
-                width: calc(100% - 2px);
-                height: calc(100% - 2px);
+                background: var(--bg-color);
                 position: absolute;
-                border: solid .5px var(--bg-color);
+                opacity: .2;
+                left: 0;
+                top: 0;
                 z-index: -1;
+            }
 
-                &::before {
-                    content: " ";
-                    display: block;
-                    width: 100%;
-                    height: 100%;
-                    background: var(--bg-color);
-                    opacity: .2;
+            svg {
+                height: 100%;
+            }
+            h3 {
+                font-size: 30px;
+                font-family: var(--bagel);
+                font-weight: lighter;
+                line-height: 50%;
+            }
+        }
+    }
+
+    .recommendations {
+        display: flex;
+
+        > div {
+            padding: 40px;
+            position: relative;
+            overflow: hidden;
+            border: solid 1px var(--bg-color);
+            
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+
+            &::before {
+                content: " ";
+                width: 100%;
+                height: 100%;
+                background: var(--bg-color);
+                position: absolute;
+                opacity: .2;
+                left: 0;
+                top: 0;
+                z-index: -1;
+            }
+            
+            img {
+                width: 150px;
+                height: 150px;
+            }
+
+            > div {
+                margin-top: 10px;
+
+                h3 {
+                    font-size: 25px;
+                    font-family: var(--bagel);
+                    font-weight: lighter;
+                }
+                .title {
+                    font-size: 18px;
+
+                    a {
+                        margin-left: 2px;
+                    }
+                }
+
+                .stars {
+                    margin-top: 10px;
+                    display: flex;
+
+                    svg {
+                        width: 35px;
+                    }
                 }
             }
 
-            > span {
-                width: calc(var(--span-width) - 30px);
-                backdrop-filter: blur(20px);
-                padding: 10px 15px;
-                z-index: 2;
-                color: #030c04;
+            > p {
+                font-size: 18px;
 
-                position: relative;
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-
-                &::after { content: attr(title); }
+                a {
+                    display: block;
+                    margin-top: 20px;
+                }
             }
         }
     }
