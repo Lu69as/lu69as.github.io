@@ -25,7 +25,7 @@ document.querySelectorAll("nav .colorMode svg").forEach((e) => {
 })
 
 function appearItem() {
-    let list = document.querySelectorAll("article > h1, .item, .desc, .skills > div, #about > p :is(.btn1, .btn2)");
+    let list = document.querySelectorAll("article > h1, .item, .desc, .skills > div, #about > div > p :is(.btn1, .btn2), #resume table td");
     list.forEach((e) => {
         if (e.getBoundingClientRect().y < (window.innerHeight - 75)) {
             let index = Array.from(list).findIndex(elem => elem.innerHTML == e.innerHTML);
@@ -111,3 +111,12 @@ document.querySelectorAll("#portfolio .item").forEach((e) => {
         }, 20);
     })
 })
+
+var splide = new Splide( '.splide', {
+    perPage: 1,
+    rewind : false,
+    focus  : 0,
+    padding: '10px',
+  } );
+  
+  splide.mount();

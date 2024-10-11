@@ -15,6 +15,7 @@ html { scroll-behavior: smooth; }
     --accent: #5eded8;
 
     --font-color: #030c04;
+    --light-font-color: #3a3a3a;
     --bg-color: #f3fcf6;
 
     --section-bg: #EEE;
@@ -30,6 +31,7 @@ html { scroll-behavior: smooth; }
     --accent: #21a19a;
 
     --font-color: #f3fcf4;
+    --light-font-color: #d3dbd4;
     --bg-color: #030c06;
 
     --section-bg: #101813;
@@ -645,6 +647,7 @@ nav {
             }
             h3 {
                 font-size: 28px;
+                color: var(--light-font-color);
             }
         }
     }
@@ -714,6 +717,9 @@ nav {
             padding-top: 15px;
             width: calc(66% - 42px);
             font-size: 20px;
+            color: var(--light-font-color);
+
+            b { color: var(--font-color); }
     
             .btn1, .btn2 {
                 font-size: 24px;
@@ -736,12 +742,20 @@ nav {
             padding: 40px 0;
             display: block;
             border-radius: 0;
-            border-top: solid 1px var(--bg-color);
+            border-top: solid 1px var(--section-secondary);
+            border-bottom: solid 1px var(--section-secondary);
             column-gap: 40px;
+
+            &:not(:last-child) {
+                border-bottom: 0;
+            }
 
             td {
                 vertical-align: top;
                 font-size: 18px;
+
+                p { color: var(--light-font-color); }
+                span, a { color: var(--font-color) !important; }
             }
 
             td:nth-child(1) {
@@ -805,9 +819,23 @@ nav {
     }
 
     .recommendations {
-        display: flex;
+        > section { gap: 0; width: 100%; margin-left: -10px; }
+        .splide__arrow { 
+            background: var(--primary) !important; 
+            position: relative; display: 
+            inline-block;
+            left: 0;
+            height: 60px;
+            width: 60px;
+            border-radius: 10px;
+            left: 10px;
+            top: 15px;
+        }
+        .splide__arrow--next { left: 20px }
+        .splide__pagination { display: none; }
 
-        > div {
+        li {
+            margin-right: 35px;
             padding: 40px;
             position: relative;
             overflow: hidden;
@@ -816,6 +844,7 @@ nav {
             display: flex;
             flex-wrap: wrap;
             gap: 20px;
+
 
             &::before {
                 content: " ";
@@ -844,10 +873,9 @@ nav {
                 }
                 .title {
                     font-size: 18px;
+                    color: var(--light-font-color);
 
-                    a {
-                        margin-left: 2px;
-                    }
+                    a { margin-left: 2px; }
                 }
 
                 .stars {
@@ -862,6 +890,7 @@ nav {
 
             > p {
                 font-size: 18px;
+                color: var(--light-font-color);
 
                 a {
                     display: block;
