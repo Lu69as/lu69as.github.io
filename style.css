@@ -81,6 +81,7 @@ body {
     position: relative;
     margin: 0;
     display: flex;
+    justify-content: center;
     padding: 35px;
     gap: 35px;
     
@@ -162,20 +163,14 @@ body {
         width: fit-content;
         font-weight: bold;
     }
-    a:not(.btn1, .btn2, nav a, .readmore, .backTop)::before {
-        content: " ";
-        width: 0%;
-        height: 3px;
-        position: absolute;
-        background: url(./img/btn-gradient.svg);
-        bottom: 0;
+    a:not(.btn1, .btn2, nav a, .readmore, .backTop, .some a)::after {
+        content: "➜";
+        margin-left: 5px;
+        display: inline-block;
         transition: 200ms;
-        transition-delay: 100ms;
     }
-    a:not(.btn1, .btn2, nav a, .readmore, .backTop):hover::before {
-        width: 100%;
-        transition-delay: none;
-    }
+    a:not(.btn1, .btn2, nav a, .readmore, .backTop, #about p a):hover::after { transform: translateX(5px); }
+
     > .background {
         background-image: url("./img/body-gradient.svg");
         background-size: cover;
@@ -194,6 +189,7 @@ body {
 section {
     position: relative;
     width: calc(100vw - 435px);
+    max-width: 1475px;
 
     display: flex;
     flex-direction: column;
@@ -403,6 +399,7 @@ nav {
             left: 0; top: 0;
             transform-origin: bottom center;
             transition: none;
+            color: #fff;
         }
 
         svg {
@@ -416,7 +413,7 @@ nav {
             animation-play-state: running;
 
             path {
-                stroke: var(--font-color);
+                stroke: #fff;
             }
         }
 
@@ -449,7 +446,6 @@ nav {
         left: 50%;
         background-size: 105%;
         background-position: center;
-        border-radius: 0;
         transition: none;
     }
 
@@ -458,13 +454,15 @@ nav {
         height: fit-content;
         border: solid 2px var(--bg-color);
         padding: 20px;
-        min-height: 40px;
+        max-height: calc(50vh - 145px);
+        max-width: 700px;
+        width: calc(100vw - 30px);
         overflow: hidden;
         
         left: 50%;
-        top: calc(40vh + 140px);
+        top: calc(50vh + 70px) !important;
         transform: translateX(-50%);
-        position: relative;
+        position: absolute;
         opacity: 0;
 
         display: flex;
@@ -507,7 +505,7 @@ nav {
         pointer-events: all;
 
         .img {
-            height: 40vh;
+            height: 50vh !important;
             top: 35px !important;
             left: 50% !important;
             transform: translateX(-50%);
@@ -730,6 +728,7 @@ nav {
 }
 
 #resume {
+    overflow: hidden;
     h2 {
         font-family: var(--dosis);
         font-weight: bold;
@@ -818,23 +817,34 @@ nav {
         }
     }
 
-    .recommendations {
-        > section { gap: 0; width: 100%; margin-left: -10px; }
-        .splide__arrow { 
-            background: var(--primary) !important; 
-            position: relative; display: 
-            inline-block;
-            left: 0;
+    .recommendations-btns {
+        margin-bottom: 15px;
+        display: flex;
+        gap: 10px;
+        
+        > div {
+            cursor: pointer;
+            background: var(--primary) !important;
             height: 60px;
             width: 60px;
             border-radius: 10px;
-            left: 10px;
-            top: 15px;
-        }
-        .splide__arrow--next { left: 20px }
-        .splide__pagination { display: none; }
 
-        li {
+            svg {
+                width: 100%;
+                height: 100%;
+                rotate: 90deg;
+
+                path { stroke: #fff }
+            }
+            &:last-child svg { rotate: -90deg; }
+        }
+    }
+    .recommendations {
+        width: 307.5%;
+        display: flex;
+
+        .slide {
+            width: 100%;
             margin-right: 35px;
             padding: 40px;
             position: relative;
@@ -896,6 +906,152 @@ nav {
                     display: block;
                     margin-top: 20px;
                 }
+            }
+        }
+        .slide:active {
+            cursor: grabbing;
+        }
+    }
+}
+
+#contact {    
+    .mapBg {
+        position: relative;
+        padding: 40px;
+        display: flex;
+        column-gap: 35px;
+        overflow: hidden;
+
+        > iframe {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0; left: 0;
+            z-index: 0;
+            opacity: .3;
+            filter: grayscale(1);
+        }
+    }
+
+    .mapBg:has(:not(.window, .window *, .some, .some *):hover) {
+        .window { transform: translateX(-100%); transition-delay: 400ms; }
+        .some { transform: translateX(100%); transition-delay: 400ms; }
+        iframe { opacity: 1; filter: grayscale(0); transition-delay: 400ms; }
+    }
+
+    .window {
+        z-index: 1;
+        width: 50%;
+        display: flex;
+        gap: 70px;
+        padding: 70px;
+        background: #3E3E3E;
+        transition: 800ms;
+
+        li, input, textarea, a, :is(input, textarea)::placeholder {
+            font-size: 18px;
+            color: #eee !important;
+            list-style: none;
+        }
+
+        .info {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            ul { padding: 0; }
+            li { opacity: .5; white-space: nowrap; }
+
+            svg { 
+                transform: rotate(-15deg);
+
+                .cls-1 { fill: var(--primary); opacity: .8; }
+                .cls-2 { fill: var(--section-secondary); opacity: .03; }
+            }
+
+        }
+
+        form {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+    
+            input, textarea {
+                padding: 10px 0;
+                border-radius: 0;
+                border: none;
+                border-bottom: solid 2px #4D4D4F;
+                background: none;
+                color: var(--font-color);
+            }
+            textarea:focus, input:focus{ outline: none; }
+
+            textarea { 
+                margin-top: 40px;
+                min-height: 80px;
+            }
+
+            .submit-container {
+                margin-top: 10px;
+                display: flex;
+                justify-content: left;
+                gap: 10px;
+
+                button {
+                    font-size: 22px;
+                    background: none;
+                    border: none;
+                    color: var(--primary);
+                    width: fit-content;
+                    text-transform: uppercase;
+                }
+                button:hover {
+                    opacity: .6;
+                    cursor: pointer;
+                }
+            }
+
+        }
+
+    }
+    .some {
+        position: absolute;
+        bottom: 40px;
+        right: 20px;
+        width: calc(50% - 195px);
+
+        z-index: 1;
+        display: flex;
+        gap: 15px;
+        transition: 800ms;
+
+        a {
+            width: 100%;
+            height: fit-content;
+            aspect-ratio: 1;
+            overflow: hidden;
+            border: solid 1px var(--font-color);
+
+            &::before {
+                content: " ";
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                left: 0;
+                background: #3E3E3E;
+                opacity: .6;
+            }
+
+            svg {
+                width: 60%;
+                border-radius: 0;
+                position: absolute;
+                top: 50%; left: 50%;
+                transform: translate(-50%, -50%);
+
+                path { fill: var(--primary); }
             }
         }
     }
