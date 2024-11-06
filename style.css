@@ -111,13 +111,15 @@ body {
         cursor: pointer;
         background-image: url("./img/btn-gradient.svg");
         background-size: cover;
-        
+        border: none;
+        position: relative;
         padding: 10px 15px;
         min-width: max-content;
         
         span {
             font-weight: bolder;
             position: relative;
+            font-size: 24px;
             z-index: 2;
             color: #fff;
         }
@@ -570,12 +572,20 @@ nav {
                 position: absolute;
                 top: 15px;
                 width: 70px;
+                background: #fff;
+                border: solid 2px #fff;
+                border-radius: 9em;
             }
         }
         .item:nth-child(odd) span {
             background: var(--font-color);
             color: var(--bg-color);
         }
+        .item:nth-child(n+4) { display: none; }
+    }
+    .container.showMore {
+        .item:nth-child(n+4) { display: flex; }
+        .showMoreBtn { display: none; }
     }
 }
 @keyframes portfolioBtn {
