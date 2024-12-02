@@ -884,6 +884,10 @@ nav {
                 width: 150px;
                 height: 150px;
             }
+            img.ai {
+                position: absolute;
+                opacity: .5;
+            }
 
             > div {
                 margin-top: 10px;
@@ -904,8 +908,9 @@ nav {
                     margin-top: 10px;
                     display: flex;
 
-                    svg {
+                    img {
                         width: 35px;
+                        height: auto;
                     }
                 }
             }
