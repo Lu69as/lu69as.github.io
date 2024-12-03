@@ -11,8 +11,10 @@
     }, 200);
 
     document.querySelectorAll("nav .lang a").forEach((e) => {
-        e.addEventListener("click", () => { document.cookie = document.cookie = "googtrans=/"
-            + e.classList[0] + "/" + (e.nextElementSibling || e.previousElementSibling).classList[0]; });
+        e.addEventListener("click", () => { 
+            document.cookie = document.cookie = "googtrans=/" + e.classList[0] + "/" + (e.nextElementSibling || e.previousElementSibling).classList[0];
+            location.reload();
+        });
     });
 }
 
@@ -98,6 +100,20 @@
             };
         });
     };
+}
+
+// --------------------------------------------------------------------------------------- //
+// Removing all link changes to navbar links so href stays clean                          //
+// ------------------------------------------------------------------------------------- //
+{
+    document.querySelectorAll("a[href^='#']").forEach((e) => {
+        e.addEventListener("click", (evt) => {
+            evt.preventDefault();
+            let scrollItem = e.getAttribute("href");
+            if (scrollItem == "#") scrollItem = "#home";
+            document.querySelector(scrollItem).scrollIntoView({ block: "start" })
+        })
+    })
 }
 
 // --------------------------------------------------------------------------------------- //
