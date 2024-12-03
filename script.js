@@ -4,13 +4,15 @@
 // ------------------------------------------------------------------------------------- //
 {
     let checkLang = setInterval(() => {
-        if (window.location.href.includes("no|en") || document.querySelector("#about > div > p").innerHTML[0, 1] == "f")
+        if (document.querySelector("#about > div > p").innerHTML[0, 1] == "f") {
             document.body.classList.add("english");
+            clearInterval(checkLang);
+        }
     }, 200);
-    setTimeout(() => { clearInterval(checkLang); }, 1100);
 
     document.querySelectorAll("nav .lang a").forEach((e) => {
-        e.addEventListener("click", () => { setTimeout(() => { location.reload(); }, 50); })
+        e.addEventListener("click", () => { document.cookie = document.cookie = "googtrans=/"
+            + e.classList[0] + "/" + (e.nextElementSibling || e.previousElementSibling).classList[0]; });
     });
 }
 
