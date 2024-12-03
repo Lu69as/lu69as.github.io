@@ -3,6 +3,8 @@
 // Check Language Javascript Code                                                         //
 // ------------------------------------------------------------------------------------- //
 {
+    document.cookie = "googtrans=/no/en; Domain=.lukasokken.com" + ";expires=" + new Date(0).toUTCString();
+
     let checkLang = setInterval(() => {
         if (document.querySelector("#about > div > p").innerHTML[0, 1] == "f") {
             document.body.classList.add("english");
@@ -12,7 +14,8 @@
 
     document.querySelectorAll("nav .lang a").forEach((e) => {
         e.addEventListener("click", () => { 
-            document.cookie = document.cookie = "googtrans=/" + e.classList[0] + "/" + (e.nextElementSibling || e.previousElementSibling).classList[0];
+            document.cookie = document.cookie = "googtrans=/" + e.classList[0] + "/" 
+                + (e.nextElementSibling || e.previousElementSibling).classList[0];
             location.reload();
         });
     });
