@@ -241,3 +241,23 @@
         });
     });
 }
+
+function importDataMedia(item, parent) {
+    parent.querySelector("h4").innerHTML = item.type;
+    parent.querySelector(".img").style.backgroundImage = `url(${ item.image })`;
+    
+    parent.querySelector("h2").innerHTML = item.name;
+    parent.querySelector("h5").innerHTML = item.rating;
+    parent.querySelector("p").innerHTML = item.description;
+
+    parent.querySelector(".btn1").innerHTML += item.name;
+    parent.querySelector(".btn1").setAttribute("href", item.link);
+};
+
+fetch('./info.json')
+    .then((response) => response.json())
+    .then((json) => {
+        for (let i = 0; i < json.media.length; i++) {
+            importDataMedia(json.media[i], document.querySelectorAll("#hobbies .gridItem")[i])
+        }
+    });

@@ -1,0 +1,28 @@
+{
+    "media": [
+        {
+            "type": "Favorittspill",
+            "name": "Skyrim VR",
+            "rating": "Spilletid: 220 timer",
+            "image": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/611670/header.jpg?t=1564002443",
+            "description": "Et ekte, full-lengde åpen verden-spill for VR har kommet fra Bethesda Game Studios. Skyrim VR reimaginerer det komplette episke fantasy-mesterverket med en uovertruffen følelse av skala, dybde og fordypning. Skyrim VR inkluderer også alle offisielle tillegg.",
+            "link": "https://store.steampowered.com/app/611670/The_Elder_Scrolls_V_Skyrim_VR/"
+        },
+        {
+            "type": "Favorittserie",
+            "name": "Arcane",
+            "rating": "IMDB: 9 / 10",
+            "image": "https://dnm.nflximg.net/api/v6/BvVbc2Wxr2w6QuoANoSpJKEIWjQ/AAAAQWKFQOd5GY1iPLtsM6OHAtPAe3L3VgCh8gI1yQUNUwehG9UteSHqEl3WFFFRh5v5M8Gh5VhbYZU5pn5MokZom8tIUqRnxDYe0vQIyidizju34wCdX_r_VZCTzZugB1-yhQfnXHyVd0rqq1rCG8-qIeEguzI.jpg?r=4a3",
+            "description": "Historien ligger i Utopian Piltover og den undertrykte undergrunnen til Zaun, og følger opprinnelsen til to ikoniske League of Legends-mestere og kraften som vil rive dem fra hverandre.",
+            "link": "https://www.imdb.com/title/tt11126994/"
+        },
+        {
+            "type": "Favorittsang",
+            "name": "Paint the Town Blue",
+            "rating": "RYM: 2.8 / 5",
+            "image": "https://i.scdn.co/image/ab67616d0000b273b6d68c96d0dea02ce85a558f",
+            "description": "Reis over hele Europa som konge av veien, en lastebilsjåfør som leverer viktig last over imponerende avstander! Med dusinvis av byer å utforske, vil din utholdenhet, dyktighet og hastighet bli presset til sine grenser.",
+            "link": "https://rateyourmusic.com/release/single/ashnikko/paint-the-town-blue/"
+        }
+    ]
+ }

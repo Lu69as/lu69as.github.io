@@ -107,6 +107,24 @@ body {
         color: #e7f0e8;
     }
 
+    .thinBorder {
+        position: relative;
+        overflow: hidden;
+        border: solid 1px var(--bg-color);
+
+        &::before {
+            content: " ";
+            width: 100%;
+            height: 100%;
+            background: var(--bg-color);
+            position: absolute;
+            opacity: .2;
+            left: 0;
+            top: 0;
+            z-index: -1;
+        }
+    }
+
     .btn1 {
         cursor: pointer;
         background-image: url("./img/btn-gradient.svg");
@@ -859,26 +877,10 @@ nav {
             width: 100%;
             margin-right: 35px;
             padding: 40px;
-            position: relative;
-            overflow: hidden;
-            border: solid 1px var(--bg-color);
             
             display: flex;
             flex-wrap: wrap;
             gap: 20px;
-
-
-            &::before {
-                content: " ";
-                width: 100%;
-                height: 100%;
-                background: var(--bg-color);
-                position: absolute;
-                opacity: .2;
-                left: 0;
-                top: 0;
-                z-index: -1;
-            }
             
             img {
                 width: 150px;
@@ -927,6 +929,57 @@ nav {
         }
         .slide:active {
             cursor: grabbing;
+        }
+    }
+}
+
+#hobbies {
+    .hobbyGrid {
+        position: relative;
+        display: grid;
+        gap: 35px;
+        grid-template-columns: 1fr 1fr 1fr;
+
+        .gridItem {
+            padding: 25px;
+            padding-bottom: 80px;
+            display: flex;
+            flex-direction: column;
+
+            h4 {
+                text-align: center;
+                font-size: 18px;
+                margin-bottom: 15px;
+            }
+
+            .desc {
+                h2 {
+                    font-size: 32px;
+                    margin-top: 20px;
+                }
+    
+                h5 {
+                    font-size: 16px;
+                    margin-top: 5px;
+                }
+    
+                p {
+                    font-size: 18px;
+                    margin-top: 12px;
+                }
+            }
+            .btn1 {
+                position: absolute;
+                bottom: 25px;
+                color: #fff !important;
+            }
+
+            .img {
+                width: 100%;
+                height: 200px;
+                background-size: cover;
+                cursor: pointer;
+            }
         }
     }
 }
