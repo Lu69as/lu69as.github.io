@@ -551,18 +551,39 @@ nav {
     }
 }
 
+#portfolio .container, #hobbies .container {
+    position: relative;
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 35px;
+    padding-bottom: 80px;
+
+    .item { width: 378px; }
+
+    .btn1 {
+        position: absolute;
+        bottom: 0;
+    }
+
+    .item:nth-child(odd) span {
+        background: var(--font-color);
+        color: var(--bg-color);
+    }
+    .item:nth-child(n+4) { display: none; }
+
+    &.showMore {
+        .item:nth-child(n+4) { display: flex; }
+        .btn1 { display: none; }
+    }
+}
+
 #portfolio {
     .container {
-        position: relative;
-        margin-top: 20px;
-        display: flex;
-        flex-wrap: wrap;
-        gap: 35px;
-
         .item {
             cursor: pointer;
-            height: 400px;
             width: 400px;
+            height: 400px;
             position: relative;
 
             padding: 15px;
@@ -570,7 +591,6 @@ nav {
             flex-direction: row;
             align-items: end;
             gap: 10px;
-
             
             .back {
                 position: absolute;
@@ -607,15 +627,6 @@ nav {
                 border-radius: 9em;
             }
         }
-        .item:nth-child(odd) span {
-            background: var(--font-color);
-            color: var(--bg-color);
-        }
-        .item:nth-child(n+4) { display: none; }
-    }
-    .container.showMore {
-        .item:nth-child(n+4) { display: flex; }
-        .btn1 { display: none; }
     }
 }
 @keyframes portfolioBtn {
@@ -946,25 +957,8 @@ nav {
 }
 
 #hobbies {
-    .hobbyGrid {
-        position: relative;
-        display: grid;
-        gap: 35px;
-        grid-template-columns: 1fr 1fr 1fr;
-        padding-bottom: 80px;
-
-        .btn1 {
-            position: absolute;
-            bottom: 0;
-        }
-
-        .gridItem:nth-child(n+4) { display: none; }
-        &.showMore { 
-            .gridItem:nth-child(n+4) { display: flex; }
-            .btn1 { display: none; }
-        }
-
-        .gridItem {
+    .container {
+        .item {
             padding: 25px;
             padding-bottom: 80px;
             display: flex;
@@ -1148,6 +1142,14 @@ nav {
             }
         }
     }
+}
+
+@media (max-width: 1874px) {
+    #portfolio .container, #hobbies .container {
+        justify-content: center;
+    }
+    .item:nth-child(n+4) { display: initial !important; }
+    .item:nth-child(n+5) { display: none !important; }
 }
 
 @media (max-width: 1650px) {

@@ -14,7 +14,7 @@
     function importData(item, type) {
         let gridItem = document.createElement("div");
         if (type == "hobby") {
-            gridItem.classList.add("gridItem", "thinBorder");
+            gridItem.classList.add("item", "thinBorder");
             gridItem.innerHTML = `
                 <h4>${ item.type }</h4>
                 <div class="img" style="background-image: url(${ item.image })" title="${ item.link }"></div>
@@ -75,8 +75,8 @@
         .then((response) => response.json())
         .then((json) => {
             for (let i = 0; i < json.media.length; i++)
-                document.querySelector("#hobbies .hobbyGrid").appendChild(importData(json.media[i], "hobby"))
-            document.querySelector("#hobbies .hobbyGrid").appendChild(importData("", "button"));
+                document.querySelector("#hobbies .container").appendChild(importData(json.media[i], "hobby"))
+            document.querySelector("#hobbies .container").appendChild(importData("", "button"));
     
             for (let i = 0; i < json.portfolio.length; i++)
                 document.querySelector("#portfolio .container").appendChild(importData(json.portfolio[i], "portfolio"))
