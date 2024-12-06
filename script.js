@@ -1,3 +1,89 @@
+// --------------------------------------------------------------------------------------- //
+// Import everything from JSON file                                                       //
+// ------------------------------------------------------------------------------------- //
+{
+    document.querySelector(".portfolioDesc").addEventListener("click", portfolioDescClick)
+    function portfolioDescClick(e) {
+        if (e.target.classList[0] == "portfolioDesc") {
+            document.querySelector(".portfolioDesc").classList.remove("active");
+            document.querySelector(".portfolioDesc .img").style.transition = "600ms";
+            setTimeout(() => { document.querySelector(".portfolioDesc .img").style.transition = "none"; }, 600);
+        }
+    }
+
+    function importData(item, type) {
+        let gridItem = document.createElement("div");
+        if (type == "hobby") {
+            gridItem.classList.add("gridItem", "thinBorder");
+            gridItem.innerHTML = `
+                <h4>${ item.type }</h4>
+                <div class="img" style="background-image: url(${ item.image })" title="${ item.link }"></div>
+                <h2>${ item.name }</h2>
+                <h5>${ item.rating }</h5>
+                <p>${ item.description }</p>
+                <a href="${ item.link }" target="_blank" rel="noreferrer">Gå til ${ item.name }</a>
+            `;
+            gridItem.querySelector(".img").addEventListener("click", () => gridItem.querySelector("a").click() );
+        }
+        else if (type == "portfolio") {
+            gridItem.classList.add("item");
+            gridItem.innerHTML = `
+                <div class="back" style="background-image: url(${ item.image });"></div>
+                <span>${ item.tools.split(",")[0] }</span>
+                <span>${ item.tools.split(",")[1] }</span>
+                
+                <a href="${ item.link }" target="_blank" rel="noreferrer">Link</a>
+                <p>${ item.description }</p>`;
+            
+            if (item.relevant) gridItem.innerHTML += `<img class="relevant" src="./img/portfolio/relevant.png">`;
+
+            if (item.list.listItems.length > 0) {
+                gridItem.innerHTML += `<br><p>${item.list.title}</p>`;
+                let list = document.createElement("ul");
+                item.list.listItems.forEach((e) => list.innerHTML += `<li>${e.desc}</li>` );
+                gridItem.appendChild(list);
+            };
+
+            gridItem.addEventListener("click", () => {
+                let portfolioDesc = document.querySelector(".portfolioDesc");
+        
+                portfolioDesc.firstElementChild.setAttribute("style", `
+                    top: ${gridItem.firstElementChild.getBoundingClientRect().y}px;
+                    left: ${gridItem.firstElementChild.getBoundingClientRect().x}px;
+                    background-image: ${gridItem.firstElementChild.style.backgroundImage};
+                    height: ${gridItem.firstElementChild.offsetHeight}px;
+                `);
+        
+                portfolioDesc.lastElementChild.innerHTML = gridItem.innerHTML;
+        
+                setTimeout(() => {
+                    portfolioDesc.classList.add("active")
+                }, 20);
+            })
+        }
+        else if (type == "button") {
+            gridItem = document.createElement("button")
+            gridItem.classList.add("btn1");
+            gridItem.innerHTML = `<span>Se mer</span>`;
+            gridItem.addEventListener("click", () => gridItem.parentElement.classList.add('showMore'));
+            gridItem.setAttribute("title", "Se mer");
+        }
+        return gridItem;
+    };
+
+    fetch('./info.json')
+        .then((response) => response.json())
+        .then((json) => {
+            for (let i = 0; i < json.media.length; i++)
+                document.querySelector("#hobbies .hobbyGrid").appendChild(importData(json.media[i], "hobby"))
+            document.querySelector("#hobbies .hobbyGrid").appendChild(importData("", "button"));
+    
+            for (let i = 0; i < json.portfolio.length; i++)
+                document.querySelector("#portfolio .container").appendChild(importData(json.portfolio[i], "portfolio"))
+            document.querySelector("#portfolio .container").appendChild(importData("", "button"));
+    });
+}
+
 
 // --------------------------------------------------------------------------------------- //
 // Check Language Javascript Code                                                         //
@@ -138,33 +224,7 @@
 // Portfolio Image Click Javascript Code                                                  //
 // ------------------------------------------------------------------------------------- //
 {
-    document.querySelector(".portfolioDesc").addEventListener("click", portfolioDescClick)
-    function portfolioDescClick(e) {
-        if (e.target.classList[0] == "portfolioDesc") {
-            document.querySelector(".portfolioDesc").classList.remove("active");
-            document.querySelector(".portfolioDesc .img").style.transition = "600ms";
-            setTimeout(() => { document.querySelector(".portfolioDesc .img").style.transition = "none"; }, 600);
-        }
-    }
     
-    document.querySelectorAll("#portfolio .item").forEach((e) => {
-        e.addEventListener("click", () => {
-            let portfolioDesc = document.querySelector(".portfolioDesc");
-    
-            portfolioDesc.firstElementChild.setAttribute("style", `
-                top: ${e.firstElementChild.getBoundingClientRect().y}px;
-                left: ${e.firstElementChild.getBoundingClientRect().x}px;
-                background-image: ${e.firstElementChild.style.backgroundImage};
-                height: ${e.firstElementChild.offsetHeight}px;
-            `);
-    
-            portfolioDesc.lastElementChild.innerHTML = e.innerHTML;
-    
-            setTimeout(() => {
-                portfolioDesc.classList.add("active")
-            }, 20);
-        })
-    })
 }
 
 
@@ -241,23 +301,3 @@
         });
     });
 }
-
-function importDataMedia(item, parent) {
-    parent.querySelector("h4").innerHTML = item.type;
-    parent.querySelector(".img").style.backgroundImage = `url(${ item.image })`;
-    
-    parent.querySelector("h2").innerHTML = item.name;
-    parent.querySelector("h5").innerHTML = item.rating;
-    parent.querySelector("p").innerHTML = item.description;
-
-    parent.querySelector(".btn1").innerHTML += item.name;
-    parent.querySelector(".btn1").setAttribute("href", item.link);
-};
-
-fetch('./info.json')
-    .then((response) => response.json())
-    .then((json) => {
-        for (let i = 0; i < json.media.length; i++) {
-            importDataMedia(json.media[i], document.querySelectorAll("#hobbies .gridItem")[i])
-        }
-    });
