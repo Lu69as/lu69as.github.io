@@ -1,110 +1,122 @@
 // --------------------------------------------------------------------------------------- //
-// Import everything from JSON file                                                       //
+// Import portfolio items and hobbies from json file                                      //
 // ------------------------------------------------------------------------------------- //
 {
-    document.querySelector(".portfolioDesc").addEventListener("click", portfolioDescClick)
-    function portfolioDescClick(e) {
-        if (e.target.classList[0] == "portfolioDesc") {
-            document.querySelector(".portfolioDesc").classList.remove("active");
-            document.querySelector(".portfolioDesc .img").style.transition = "600ms";
-            setTimeout(() => { document.querySelector(".portfolioDesc .img").style.transition = "none"; }, 600);
-        }
-    }
-
-    function importData(item, type) {
-        let gridItem = document.createElement("div");
-        if (type == "hobby") {
-            gridItem.classList.add("item", "thinBorder");
-            gridItem.innerHTML = `
-                <h4>${ item.type }</h4>
-                <div class="img" style="background-image: url(${ item.image })" title="${ item.link }"></div>
-                <h2>${ item.name }</h2>
-                <h5>${ item.rating }</h5>
-                <p>${ item.description }</p>
-                <a href="${ item.link }" target="_blank" rel="noreferrer">Gå til ${ item.name }</a>
-            `;
-            gridItem.querySelector(".img").addEventListener("click", () => gridItem.querySelector("a").click() );
-        }
-        else if (type == "portfolio") {
-            gridItem.classList.add("item");
-            gridItem.innerHTML = `
-                <div class="back" style="background-image: url(${ item.image });"></div>
-                <span>${ item.tools.split(",")[0] }</span>
-                <span>${ item.tools.split(",")[1] }</span>
-                
-                <a href="${ item.link }" target="_blank" rel="noreferrer">Link</a>
-                <p>${ item.description }</p>`;
-            
-            if (item.relevant) gridItem.innerHTML += `<img class="relevant" src="./img/portfolio/relevant.png">`;
-
-            if (item.list.listItems.length > 0) {
-                gridItem.innerHTML += `<br><p>${item.list.title}</p>`;
-                let list = document.createElement("ul");
-                item.list.listItems.forEach((e) => list.innerHTML += `<li>${e.desc}</li>` );
-                gridItem.appendChild(list);
-            };
-
-            gridItem.addEventListener("click", () => {
-                let portfolioDesc = document.querySelector(".portfolioDesc");
-        
-                portfolioDesc.firstElementChild.setAttribute("style", `
-                    top: ${gridItem.firstElementChild.getBoundingClientRect().y}px;
-                    left: ${gridItem.firstElementChild.getBoundingClientRect().x}px;
-                    background-image: ${gridItem.firstElementChild.style.backgroundImage};
-                    height: ${gridItem.firstElementChild.offsetHeight}px;
-                `);
-        
-                portfolioDesc.lastElementChild.innerHTML = gridItem.innerHTML;
-        
-                setTimeout(() => {
-                    portfolioDesc.classList.add("active")
-                }, 20);
-            })
-        }
-        else if (type == "button") {
-            gridItem = document.createElement("button")
-            gridItem.classList.add("btn1");
-            gridItem.innerHTML = `<span>Se mer</span>`;
-            gridItem.addEventListener("click", () => gridItem.parentElement.classList.add('showMore'));
-            gridItem.setAttribute("title", "Se mer");
-        }
-        return gridItem;
-    };
-
-    fetch('./info.json')
+    let page = window.location.href;    
+    fetch('/src/info.json')
         .then((response) => response.json())
         .then((json) => {
-            for (let i = 0; i < json.media.length; i++)
-                document.querySelector("#hobbies .container").appendChild(importData(json.media[i], "hobby"))
-            document.querySelector("#hobbies .container").appendChild(importData("", "button"));
+            if (page.includes("hobbyer")) {
+                document.querySelector(".game").innerHTML = `
+                    <div>${ json.media.game.iframe }</div>
+                    <div>
+                        <h2>Mitt favorittspill</h2>
+                        <h3>${ json.media.game.name } - Spilletid: ${ json.media.game.playtime } Timer</h3>
+                        <p>${ json.media.game.description }</p>
+                        <a href="${ json.media.game.link }" target="_blank" rel="noreferrer">Gå til ${ json.media.game.name }</a>
+                    </div>
+                `;
+                document.querySelector(".series").innerHTML = `
+                    <div>${ json.media.series.iframe }</div>
+                    <div>
+                        <h2>Min favorittserie</h2>
+                        <h3>${ json.media.series.name } - ${ json.media.series.rating }</h3>
+                        <p>${ json.media.series.description }</p>
+                        <a href="${ json.media.series.link }" target="_blank" rel="noreferrer">Gå til ${ json.media.series.name }</a>
+                    </div>
+                `;
+                document.querySelector(".song").innerHTML = `
+                    <h2>Min favorittsang</h2>
+                    ${ json.media.song }
+                `;
+                document.querySelector(".movie").innerHTML = `
+                    <div>${ json.media.movie.iframe }</div>
+                    <div>
+                        <h2>Min favorittfilm</h2>
+                        <h3>${ json.media.movie.name } - ${ json.media.movie.rating }</h3>
+                        <p>${ json.media.movie.description }</p>
+                        <a href="${ json.media.movie.link }" target="_blank" rel="noreferrer">Gå til ${ json.media.movie.name }</a>
+                    </div>
+                `;
+                document.querySelector(".sport").innerHTML = `
+                    <div>${ json.media.sport.iframe }</div>
+                    <div>
+                        <h2>Min favorittsport</h2>
+                        <h3>${ json.media.sport.name } - ${ json.media.sport.driver }</h3>
+                        <p>${ json.media.sport.description }</p>
+                        <a href="${ json.media.sport.link }" target="_blank" rel="noreferrer">Gå til ${ json.media.sport.name }</a>
+                    </div>
+                `;
+            }
     
-            for (let i = 0; i < json.portfolio.length; i++)
-                document.querySelector("#portfolio .container").appendChild(importData(json.portfolio[i], "portfolio"))
-            document.querySelector("#portfolio .container").appendChild(importData("", "button"));
+            else if (page.includes("portefolje")) {
+                json.portfolio.forEach((e) => {
+                    let gridItem = document.createElement("div");
+                    gridItem.classList.add("item");
+                    gridItem.innerHTML = `
+                        <div class="back" style="background-image: url(${ e.image });"></div>
+                        <span>${ e.tools.split(",")[0] }</span>
+                        <span>${ e.tools.split(",")[1] }</span>
+                        
+                        <a href="${ e.link }" target="_blank" rel="noreferrer">Link</a>
+                        <p>${ e.description }</p>`;
+                    
+                    if (e.relevant) gridItem.innerHTML += `<img class="relevant" src="/img/portfolio/relevant.png">`;
+    
+                    if (e.list.listItems.length > 0) {
+                        gridItem.innerHTML += `<br><p>${e.list.title}</p>`;
+                        let list = document.createElement("ul");
+                        e.list.listItems.forEach((l) => e.innerHTML += `<li>${l.desc}</li>` );
+                        gridItem.appendChild(list);
+                    };
+    
+                    gridItem.addEventListener("click", () => {
+                        let portfolioDesc = document.querySelector(".portfolioDesc");
+    
+                        portfolioDesc.querySelector("img").style.transform = "translateX(-100px)";
+                        portfolioDesc.querySelector("img").style.opacity = "0";
+                        portfolioDesc.lastElementChild.style.paddingTop = "50px";
+                
+                        portfolioDesc.querySelector("img").addEventListener("transitionend", () => {
+                            portfolioDesc.querySelector("img").setAttribute("src", e.image);
+                            portfolioDesc.querySelector("img").style.transform = "translateX(0px)";
+                            portfolioDesc.querySelector("img").style.opacity = "1";
+    
+                            portfolioDesc.lastElementChild.style.paddingTop = "25px";
+                            portfolioDesc.lastElementChild.innerHTML = gridItem.innerHTML;
+                        });
+                    })
+                    document.querySelector("#portfolio .container").appendChild(gridItem);
+                })
+                document.querySelector("#portfolio .container").firstElementChild.click();
+            }
     });
 }
+
 
 
 // --------------------------------------------------------------------------------------- //
-// Check Language Javascript Code                                                         //
+// Import navbar and footer from files and create link hover effect                       //
 // ------------------------------------------------------------------------------------- //
 {
-    let checkLang = setInterval(() => {
-        if (document.querySelector("#about > div > p").innerHTML[0, 1] == "f") {
-            document.body.classList.add("english");
-            clearInterval(checkLang);
-        }
-    }, 200);
-
-    document.querySelectorAll("nav .lang a").forEach((e) => {
-        e.addEventListener("click", () => { 
-            document.cookie = "googtrans=/no/en; Domain=.lukasokken.com" + ";expires=" + new Date(0).toUTCString();
-            document.cookie = document.cookie = "googtrans=/" + e.classList[0] + "/" 
-                + (e.nextElementSibling || e.previousElementSibling).classList[0];
-            location.reload(true);
-        });
-    });
+    fetch('/src/navbar.html')
+      .then(response => { return response.text() })
+      .then(html => document.querySelectorAll("nav").forEach((e) => {
+        e.innerHTML = html;
+        fetch('/src/footer.html')
+          .then(response => { return response.text() })
+          .then(html => document.querySelectorAll("footer").forEach((e) => {
+            e.innerHTML = html;
+    
+            document.querySelectorAll("a:not(.btn1, .btn2, .readmore, .backTop, .some a)").forEach((e) => e.addEventListener("mouseleave", () => {
+                e.style.setProperty('--beforeLeft', 'initial');
+                e.addEventListener("transitionend", () => e.style.setProperty('--beforeLeft', '0'), { once: true })
+            }));
+        }));
+    }));
 }
+
+
 
 // --------------------------------------------------------------------------------------- //
 // Check Light / Dark mode Javascript Code                                                //
@@ -134,7 +146,7 @@
 // ------------------------------------------------------------------------------------- //
 {
     function appearItem() {
-        let list = document.querySelectorAll("article > h1, .item, .desc, .skills > div, #about > div > p :is(.btn1, .btn2), #resume table td");
+        let list = document.querySelectorAll(".scroll-appear-item");
         list.forEach((e) => {
             if (e.getBoundingClientRect().y < (window.innerHeight - 75)) {
                 let index = Array.from(list).findIndex(elem => elem.innerHTML == e.innerHTML);
@@ -158,6 +170,8 @@
     appearItem();
 }
 
+
+
 // --------------------------------------------------------------------------------------- //
 // Read More Circle Home page Javascript Code - Scroll animation                          //
 // ------------------------------------------------------------------------------------- //
@@ -174,57 +188,25 @@
     }
 }
 
-// --------------------------------------------------------------------------------------- //
-// Active Navbar Link Javascript Code - Scroll animation                                  //
-// ------------------------------------------------------------------------------------- //
-{
-    document.querySelector("nav a.home").classList.add("active");
 
-    function navbarItemActive() {
-        document.querySelectorAll("section article").forEach((e) => {
-            if (e.getBoundingClientRect().y < 500) {
-                document.querySelectorAll("nav a").forEach((a) => { a.classList.remove("active") });
-                document.querySelector("nav a." + e.id).classList.add("active")
-            };
-        });
-    };
-}
-
-// --------------------------------------------------------------------------------------- //
-// Removing all link changes to navbar links so href stays clean                          //
-// ------------------------------------------------------------------------------------- //
-{
-    document.querySelectorAll("a[href^='#']").forEach((e) => {
-        e.addEventListener("click", (evt) => {
-            evt.preventDefault();
-            let scrollItem = e.getAttribute("href");
-            if (scrollItem == "#") scrollItem = "#home";
-            document.querySelector(scrollItem).scrollIntoView({ block: "start" })
-        })
-    })
-}
 
 // --------------------------------------------------------------------------------------- //
 // Calling All Scroll Animations When Scrolling                                           //
 // ------------------------------------------------------------------------------------- //
 {
+    document.querySelector(".backTop").addEventListener("click", () => window.scrollTo(0, 0));
+
     document.addEventListener("scroll", () => {
         setTimeout(appearItem, 400);
         appearItem();
     
         readmoreRotate();
-    
-        navbarItemActive();
+
+        if (scrollY > 200)
+            document.querySelector(".backTop").style.transform = "translateX(0px)";
+        else
+            document.querySelector(".backTop").style.transform = "translateX(100px)";
     });
-}
-
-
-
-// --------------------------------------------------------------------------------------- //
-// Portfolio Image Click Javascript Code                                                  //
-// ------------------------------------------------------------------------------------- //
-{
-    
 }
 
 
@@ -292,12 +274,131 @@
 
 
 // --------------------------------------------------------------------------------------- //
-// Contact Cancel button Javascript Code                                                  //
+// Contact Cancel button and Globe code from amcharts                                     //
 // ------------------------------------------------------------------------------------- //
 {
-    document.querySelector("#contact form button.cancel").addEventListener("click", () => {
-        document.querySelectorAll("#contact form :is(input, textarea)").forEach((e) => {
-            e.value = "";
+    if (window.location.href.includes("kontakt")) {
+        document.querySelector("#contact form button.cancel").addEventListener("click", () => {
+            document.querySelectorAll("#contact form :is(input, textarea)").forEach((e) => {
+                e.value = "";
+            });
         });
-    });
+    
+        /**
+         * ---------------------------------------
+         * This demo was created using amCharts 4.
+         * 
+         * For more information visit:
+         * https://www.amcharts.com/
+         * 
+         * Documentation is available at:
+         * https://www.amcharts.com/docs/v4/
+         * ---------------------------------------
+        */
+    
+        // Themes begin
+        am4core.useTheme(am4themes_animated);
+        // Themes end
+    
+        var chart = am4core.create("chartdiv", am4maps.MapChart);
+    
+        // Set map definition
+        chart.geodata = am4geodata_worldLow;
+    
+        // Set projection
+        chart.projection = new am4maps.projections.Orthographic();
+        chart.panBehavior = "rotateLongLat";
+        chart.maxZoomLevel = 1;
+        chart.deltaLatitude = -30;
+        chart.padding(0);
+    
+        chart.backgroundSeries.mapPolygons.template.polygon.fill = am4core.color("#aadaff");
+        chart.backgroundSeries.mapPolygons.template.polygon.fillOpacity = 0.1;
+    
+        // Create map polygon series
+        var polygonSeries = chart.series.push(new am4maps.MapPolygonSeries());
+    
+        polygonSeries.useGeodata = true;
+    
+        var polygonTemplate = polygonSeries.mapPolygons.template;
+        polygonTemplate.tooltipText = "{name}";
+        polygonTemplate.fill = am4core.color("#222");
+        polygonTemplate.stroke = am4core.color("#7A7E85");
+        polygonTemplate.strokeWidth = .2;
+        polygonTemplate.cursorOverStyle = am4core.MouseCursorStyle.pointer;
+    
+        var graticuleSeries = chart.series.push(new am4maps.GraticuleSeries());
+        graticuleSeries.mapLines.template.line.stroke = am4core.color("#222");
+        graticuleSeries.mapLines.template.line.strokeOpacity = 0.1;
+        graticuleSeries.fitExtent = false;
+    
+        let animation;
+        setTimeout(function(){
+        animation = chart.animate({property:"deltaLongitude", to:100000}, 20000000);
+        }, 0)
+    
+        let animationTimeOut;
+        chart.events.on("down", function() {
+            // Stop the animation when the user starts interacting with the map
+            if (animation) {
+                animation.stop();
+            }
+            clearInterval(animationTimeOut);
+        });
+        chart.events.on("up", function() {
+            animationTimeOut = setTimeout(function(){
+                animation = chart.animate({property:"deltaLongitude", to:100000}, 20000000);
+            }, 500)
+        });
+    
+        let color = window.getComputedStyle(document.querySelector("body")).getPropertyValue('--secondary');
+    
+        polygonSeries.data = [{
+                "id": "NO",
+                "fill": am4core.color(color)
+            }, {
+                "id": "SE",
+                "fill": am4core.color(color)
+            }, {
+                "id": "DK",
+                "fill": am4core.color(color)
+            }, {
+                "id": "DE",
+                "fill": am4core.color(color)
+            }, {
+                "id": "NL",
+                "fill": am4core.color(color)
+            }, {
+                "id": "BE",
+                "fill": am4core.color(color)
+            }, {
+                "id": "LU",
+                "fill": am4core.color(color)
+            }, {
+                "id": "FR",
+                "fill": am4core.color(color)
+            }, {
+                "id": "GB",
+                "fill": am4core.color(color)
+            }, {
+                "id": "BG",
+                "fill": am4core.color(color)
+            }, {
+                "id": "HR",
+                "fill": am4core.color(color)
+            }, {
+                "id": "SJ",
+                "fill": am4core.color(color)
+            }, {
+                "id": "US",
+                "fill": am4core.color(color)
+            }, {
+                "id": "LT",
+                "fill": am4core.color(color)
+            }
+        ];
+    
+        // Bind "fill" property to "fill" key in data
+        polygonTemplate.propertyFields.fill = "fill";
+    }
 }

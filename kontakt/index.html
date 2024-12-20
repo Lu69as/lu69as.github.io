@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="title" content="CV">
+    <meta property="og:title" content="Lukas Okkenhaug, Front-end utvilker" />
+    <meta name="description" content="En ung Front-End sjel som brenner for å lage spennende design på nettsider og andre reklamer.">
+    <meta property="og:description" content="Lukas Okkenhaug er en front-end utvilker med nylig erfaring fra skolen, men også en del erfaring i arbeid."/>
+    <meta property="og:image" content="https://lukasokken.com/img/me-noBg.png"/>
+    <link rel="canonical" href="https://lukasokken.com" />
+    <meta property="og:url" content="https://lukasokken.com/"/>
+
+    <script src="https://kit.fontawesome.com/d11723fac3.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/style.css">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <title>CV - Lukas Okkenhaug</title>
+</head>
+
+<body>
+    <div class="background"></div>
+
+    <a href="#" class="backTop"><svg width="800px" height="800px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M12 6V18M12 18L7 13M12 18L17 13" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+
+      
+    <section>
+      <nav></nav>
+      <article id="contact">
+        <h1>Kontakt meg!</h1>
+        
+        <div class="grid">
+            <div class="countries">
+                <script src="https://www.amcharts.com/lib/4/core.js"></script>
+                <script src="https://www.amcharts.com/lib/4/maps.js"></script>
+                <script src="https://www.amcharts.com/lib/4/geodata/worldLow.js"></script>
+                <script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
+                <div id="chartdiv"></div>
+                <img src="/img/logo.png" alt="Logo">
+            </div>
+            <div class="window">
+                <form action="https://formcarry.com/s/ggg7Sx8KEko" method="POST" enctype="multipart/form-data">
+                    <input type="text" name="Navn" required="yes" placeholder="Fullt Navn">
+                    <input type="email" name="E-post" required="yes" placeholder="E-post">
+                    <input type="text" name="Emne" required="yes" placeholder="Emne">
+
+                    <textarea name="Melding" required="yes" placeholder="Beskjed"></textarea>
+
+                    <div class="submit-container">
+                    <button type="button" class="cancel btn1">Avbryt</button>
+                    <button type="submit" class="btn1">Send</button>
+                    </div>
+                </form>
+                <!-- <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 265.25 219.64">
+                <rect class="cls-2" x="8.52" y=".29" width="29.09" height="29.09" rx="14.55" ry="14.55"/>
+                <rect class="cls-2" x="50.75" y="0" width="160.25" height="29.09" rx="14.55" ry="14.55"/>
+                <rect class="cls-2" x="66.74" y="49.57" width="121.26" height="29.09" rx="14.55" ry="14.55"/>
+                <rect class="cls-2" x="4.24" y="99.57" width="76.76" height="29.09" rx="14.55" ry="14.55"/>
+                <rect class="cls-2" x="188.49" y="99.57" width="76.76" height="29.09" rx="14.55" ry="14.55"/>
+                <rect class="cls-2" x="28.37" y="149.57" width="76.76" height="29.09" rx="14.55" ry="14.55"/>
+                <rect class="cls-2" x="164.61" y="149.57" width="76.76" height="29.09" rx="14.55" ry="14.55"/>
+                <rect class="cls-2" x="66.74" y="199.64" width="160.25" height="20" rx="10" ry="10"/>
+                <path class="cls-1" d="M246.6,64.99c-.69-3.1-2.23-6.03-4.48-8.49-.46-.52-.94-.98-1.46-1.44-4.01-3.61-9.59-5.68-15.3-5.68h-121.55c-5.78,0-11.22,2.02-15.31,5.68-.52.46-1,.93-1.47,1.46-2.24,2.45-3.78,5.38-4.45,8.48-.28,1.22-.42,2.48-.42,3.76v76.4c0,2.66.6,5.25,1.8,7.71,1.04,2.18,2.61,4.26,4.54,5.99.49.43.97.84,1.49,1.23,3.87,2.87,8.78,4.45,13.82,4.45h121.55c5.07,0,9.97-1.59,13.83-4.48.52-.37,1-.77,1.47-1.2,1.87-1.67,3.36-3.6,4.43-5.72l.14-.3c1.17-2.41,1.77-4.99,1.77-7.67v-76.4c0-1.26-.14-2.53-.4-3.77ZM93.36,61.75c.31-.4.7-.81,1.2-1.26,2.48-2.21,5.76-3.43,9.24-3.43h121.55c3.51,0,6.8,1.22,9.25,3.44.42.38.83.81,1.18,1.23l.93,1.12-64.88,50.6c-2,1.57-4.58,2.43-7.25,2.43s-5.22-.86-7.25-2.43l-64.81-50.59.85-1.11ZM90.76,145.83c-.04-.21-.04-.44-.04-.67v-74.81l50.35,39.31-49.84,38.89-.46-2.7ZM231.83,155.31c-1.95,1.01-4.19,1.54-6.49,1.54h-121.55c-2.29,0-4.54-.53-6.49-1.54l-2.04-1.06,51.5-40.16,5.64,4.39c3.39,2.63,7.7,4.08,12.16,4.08s8.8-1.45,12.18-4.08l5.64-4.39,51.48,40.16-2.04,1.05ZM238.43,145.15c0,.23,0,.46-.04.66l-.45,2.73-49.86-38.88,50.34-39.31v74.79Z"/>
+                <rect class="cls-1" x="23" y="65.38" width="35" height="9" rx="4.5" ry="4.5"/>
+                <rect class="cls-1" x="0" y="102.38" width="26" height="9" rx="4.5" ry="4.5"/>
+                <rect class="cls-1" x="18" y="139.38" width="49" height="9" rx="4.5" ry="4.5"/>
+                </svg> -->
+            </div>
+        </div>
+      </article>
+    </section>
+
+    <footer></footer>
+
+    <div id="google_translate_element"></div>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script> 
+    <script type="text/javascript">
+      function googleTranslateElementInit() {
+        new google.translate.TranslateElement({pageLanguage: 'no'}, 'google_translate_element');
+      }
+    </script>
+
+    <script src="/script.js"></script>
+</body>
+</html>

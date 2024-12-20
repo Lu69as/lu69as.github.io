@@ -2,14 +2,26 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://lukasokken.com/index.html</loc>
-    <lastmod>2024-12-17</lastmod>
+    <lastmod>2024-12-20</lastmod>
   </url>
   <url>
     <loc>https://www.lukasokken.com/index.html</loc>
-    <lastmod>2024-12-17</lastmod>
+    <lastmod>2024-12-20</lastmod>
   </url>
   <url>
-    <loc>https://youtube.lukasokken.com/index.html</loc>
-    <lastmod>2024-12-17</lastmod>
+    <loc>https://lukasokken.com/portefolje/index.html</loc>
+    <lastmod>2024-12-20</lastmod>
+  </url>
+  <url>
+    <loc>https://lukasokken.com/cv/index.html</loc>
+    <lastmod>2024-12-20</lastmod>
+  </url>
+  <url>
+    <loc>https://lukasokken.com/hobbyer/index.html</loc>
+    <lastmod>2024-12-20</lastmod>
+  </url>
+  <url>
+    <loc>https://lukasokken.com/kontakt/index.html</loc>
+    <lastmod>2024-12-20</lastmod>
   </url>
 </urlset>

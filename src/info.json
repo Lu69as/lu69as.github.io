@@ -1,0 +1,89 @@
+{
+    "media": {
+        "game": {
+            "name": "Skyrim VR",
+            "playtime": "327",
+            "iframe": "<iframe width='800' height='354' src='https://www.youtube.com/embed/fg_vqd8zAhw?si=p5dJA2HPiuGD-iw8?controls=0&showinfo=0&rel=0&wmode=transparent' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' referrerpolicy='strict-origin-when-cross-origin' allowfullscreen></iframe>",
+            "description": "Et ekte, full-lengde åpen verden-spill for VR har kommet fra Bethesda Game Studios. Skyrim VR reimaginerer det komplette episke fantasy-mesterverket med en uovertruffen følelse av skala, dybde og fordypning. Skyrim VR inkluderer også alle offisielle tillegg.",
+            "link": "https://store.steampowered.com/app/611670/The_Elder_Scrolls_V_Skyrim_VR/"
+        },
+        "series": {
+            "name": "Arcane",
+            "rating": "IMDB: 9.0 / 10",
+            "iframe": "<iframe width='800' height='354' src='https://www.youtube.com/embed/fXmAurh012s?si=nrivTEh4oe36jKxQ?controls=0&showinfo=0&rel=0&wmode=transparent' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' referrerpolicy='strict-origin-when-cross-origin' allowfullscreen></iframe>",
+            "description": "Historien ligger i Utopian Piltover og den undertrykte undergrunnen til Zaun, og følger opprinnelsen til to ikoniske League of Legends-mestere og kraften som vil rive dem fra hverandre.",
+            "link": "https://www.imdb.com/title/tt11126994/"
+        },
+        "song": "<iframe style='border-radius:12px' src='https://open.spotify.com/embed/track/0g0qfC3nAaIsfbxS29ksJx?utm_source=generator' width='100%' height='232' frameBorder='0' allowfullscreen='' allow='autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture' loading='lazy'></iframe>",
+        "movie": {
+            "name": "Joker",
+            "rating": "IMDB: 8.4 / 10",
+            "iframe": "<iframe width='800' height='354' src='https://www.youtube.com/embed/t433PEQGErc?si=9WIVpbhoAlm6yp3S?controls=0&showinfo=0&rel=0&wmode=transparent' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' referrerpolicy='strict-origin-when-cross-origin' allowfullscreen></iframe>",
+            "description": "Arthur Fleck, en festklovn og en mislykket standup-komiker, lever et fattig liv med sin syke mor. Men når samfunnet skyr ham og stempler ham som en freak, bestemmer han seg for å omfavne livet med kaos i Gotham City.",
+            "link": "https://www.imdb.com/title/tt7286456/"
+        },
+        "sport": {
+            "name": "Formel 1",
+            "driver": "Lando Norris",
+            "iframe": "<iframe width='800' height='354' src='https://www.youtube.com/embed/wtJPe1ksS6E?si=QKaWHHRQCKe3ufmG?controls=0&showinfo=0&rel=0&wmode=transparent' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' referrerpolicy='strict-origin-when-cross-origin' allowfullscreen></iframe>",
+            "description": "Formel 1 er en lagsport (det må være å skifte alle 4 dekkene på en bil på under 2 sekunder!), men sjåførene er mer som jagerpiloter enn idrettsfolk. Jeg heier på Lando Norris, som kjører for Mclaren laget som per. 5. 12. 2024 Leder mesterskapet",
+            "link": "https://www.formula1.com"
+        }
+    },
+    "portfolio": [
+        {
+            "relevant": false,
+            "image": "/img/portfolio/voting-site.jpg",
+            "tools": "ASP.net C#, MySQL",
+            "link": "https://github.com/lu69as/voting-site",
+            "description": "<br>En nettside jeg fikk på skolen som fort ble til et lidenskapsprosjekt.",
+            "list": {
+                "title": "Denne nettsiden har mange funksjoner og egenskaper jeg er stolt over:",
+                "listItems": [
+                    { "desc": "En sjekk for fødselsnummer så ingen for stemt mer enn en gang eller lagt inn falske stemmer." },
+                    { "desc": "En admin funksjon som legger inn tilfeldige stemmer, men som bestemmer et par partier som får mesteparten av stemmene." },
+                    { "desc": "En visuelt fin reultat side som kan vise nasjonale og kommunale stemmeresultater." }
+                ]
+            }
+        },
+        {
+            "relevant": false,
+            "image": "/img/portfolio/react-site.jpg",
+            "tools": "React JS, SCSS",
+            "link": "https://github.com/lu69as/website-v2",
+            "description": "<br>En personling nettside hvor jeg valgte å lære meg React rammeverket.<br>Jeg endte opp med å forstå relativt mye av hvordan det funker og hvis jeg hadde fått en fremtidig oppgave hvor det kreves å bruke et javascript rammeverk, vet jeg at dette prosjektet kommer til å hjelpe.",
+            "list": {
+                "title": "",
+                "listItems": [
+                    
+                ]
+            }
+        },
+        {
+            "relevant": true,
+            "image": "/img/portfolio/komfort-solskjerming.jpg",
+            "tools": "WordPress, MySQL",
+            "link": "https://komfortsolskjerming.no/",
+            "description": "<br>Mitt første egne nettsideprosjekt hos Relevant hvor jeg var med / ledet alle deler fra produksjon til publisering. <br><br>Av å publisere denne siden lærte jeg mye om optimalisering og å gjøre nettsiden klar for masse brukere. <br><br>Jeg er veldig stolt av hvordan nettsiden endte opp og det bled kunden og.",
+            "list": {
+                "title": "",
+                "listItems": [
+
+                ]
+            }
+        },
+        {
+            "relevant": true,
+            "image": "/img/portfolio/FFK-Banner.jpg",
+            "tools": "Bannerwise, Photoshop",
+            "link": "https://client.bannerwise.io/#/share/66f3c1c1b77f5bb651dc80f7",
+            "description": "<br>En av mine første Bannerwise prosjekter. Oppdraget var å reklamere for en fotballkamp mellom Fredrikstad fotballklubb og Lillestrøm sportsklubb hvor målet var at FFK skulle sette en ny publikumsrekord på hjemmebane.",
+            "list": {
+                "title": "",
+                "listItems": [
+                    
+                ]
+            }
+        }
+    ]
+}
