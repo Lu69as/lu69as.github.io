@@ -73,7 +73,7 @@
                     gridItem.addEventListener("click", () => {
                         let portfolioDesc = document.querySelector(".portfolioDesc");
     
-                        portfolioDesc.querySelector("img").style.transform = "translateX(-100px)";
+                        portfolioDesc.querySelector("img").style.transform = "translateX(-20px)";
                         portfolioDesc.querySelector("img").style.opacity = "0";
                         portfolioDesc.lastElementChild.style.paddingTop = "50px";
                 
@@ -111,6 +111,15 @@
             document.querySelectorAll("a:not(.btn1, .btn2, .readmore, .backTop, .some a)").forEach((e) => e.addEventListener("mouseleave", () => {
                 e.style.setProperty('--beforeLeft', 'initial');
                 e.addEventListener("transitionend", () => e.style.setProperty('--beforeLeft', '0'), { once: true })
+            }));
+
+            document.querySelectorAll("footer .some a").forEach((e) => e.addEventListener("mouseenter", (evt) => {
+                if (evt.layerX > e.offsetWidth / 2)
+                    e.style.transform = "scale(1.05) rotate(5deg)";
+                else
+                    e.style.transform = "scale(1.05) rotate(-5deg)";
+
+                e.addEventListener("mouseleave", () => e.style.transform = "scale(1) rotate(0deg)", { once: true })
             }));
         }));
     }));
