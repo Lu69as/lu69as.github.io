@@ -95,6 +95,13 @@
 
 
 
+window.onerror = function (msg, url, line) {
+    console.log("Error: " + msg + "<br>");
+    console.log("URL: " + url + "<br>");
+    console.log("Line: " + line + "<br>");
+}
+
+
 // --------------------------------------------------------------------------------------- //
 // Import navbar and footer from files and create link hover effect                       //
 // ------------------------------------------------------------------------------------- //
