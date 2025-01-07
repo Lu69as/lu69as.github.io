@@ -165,7 +165,7 @@ window.onerror = function (msg, url, line) {
                         let paper = document.querySelector(".paper")
                         paper.classList.add("open");
                         paper.innerHTML = article.innerHTML;
-                        paper.querySelectorAll("a").forEach((ap) => ap.outerHTML = ap.innerHTML);
+                        paper.querySelectorAll("h2 a, a:has(img)").forEach((ap) => ap.outerHTML = ap.innerHTML);
 
                         document.addEventListener("click", (evt) => {
                             if (evt.target.id == "blog" || evt.target.classList[0] == "close") paper.classList.remove("open");
