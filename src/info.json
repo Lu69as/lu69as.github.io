@@ -36,54 +36,70 @@
             "image": "/img/portfolio/voting-site.jpg",
             "tools": "ASP.net C#, MySQL",
             "link": "https://github.com/lu69as/voting-site",
-            "description": "<br>En nettside jeg fikk på skolen som fort ble til et lidenskapsprosjekt.",
-            "list": {
-                "title": "Denne nettsiden har mange funksjoner og egenskaper jeg er stolt over:",
-                "listItems": [
-                    { "desc": "En sjekk for fødselsnummer så ingen for stemt mer enn en gang eller lagt inn falske stemmer." },
-                    { "desc": "En admin funksjon som legger inn tilfeldige stemmer, men som bestemmer et par partier som får mesteparten av stemmene." },
-                    { "desc": "En visuelt fin reultat side som kan vise nasjonale og kommunale stemmeresultater." }
-                ]
-            }
+            "description": "<br>En nettside jeg fikk på skolen som fort ble til et lidenskapsprosjekt.<br><br>Denne nettsiden har mange små funksjoner og og koder jeg har skrevet som gjør den rask, brukervennlig og den ser kul ut."
         },
         {
             "relevant": false,
             "image": "/img/portfolio/react-site.jpg",
             "tools": "React JS, SCSS",
             "link": "https://github.com/lu69as/website-v2",
-            "description": "<br>En personling nettside hvor jeg valgte å lære meg React rammeverket.<br>Jeg endte opp med å forstå relativt mye av hvordan det funker og hvis jeg hadde fått en fremtidig oppgave hvor det kreves å bruke et javascript rammeverk, vet jeg at dette prosjektet kommer til å hjelpe.",
-            "list": {
-                "title": "",
-                "listItems": [
-                    
-                ]
-            }
+            "description": "<br>En personling nettside hvor jeg valgte å lære meg React rammeverket.<br>Jeg endte opp med å forstå relativt mye av hvordan det funker og hvis jeg hadde fått en fremtidig oppgave hvor det kreves å bruke et javascript rammeverk, vet jeg at dette prosjektet kommer til å hjelpe."
         },
         {
             "relevant": true,
             "image": "/img/portfolio/komfort-solskjerming.jpg",
             "tools": "WordPress, MySQL",
             "link": "https://komfortsolskjerming.no/",
-            "description": "<br>Mitt første egne nettsideprosjekt hos Relevant hvor jeg var med / ledet alle deler fra produksjon til publisering. <br><br>Av å publisere denne siden lærte jeg mye om optimalisering og å gjøre nettsiden klar for masse brukere. <br><br>Jeg er veldig stolt av hvordan nettsiden endte opp og det bled kunden og.",
-            "list": {
-                "title": "",
-                "listItems": [
-
-                ]
-            }
+            "description": "<br>Mitt første egne nettsideprosjekt hos Relevant hvor jeg var med / ledet alle deler fra produksjon til publisering. <br><br>Av å publisere denne siden lærte jeg mye om optimalisering og å gjøre nettsiden klar for masse brukere. <br><br>Jeg er veldig stolt av hvordan nettsiden endte opp og det bled kunden og."
         },
         {
             "relevant": true,
             "image": "/img/portfolio/FFK-Banner.jpg",
             "tools": "Bannerwise, Photoshop",
             "link": "https://client.bannerwise.io/#/share/66f3c1c1b77f5bb651dc80f7",
-            "description": "<br>En av mine første Bannerwise prosjekter. Oppdraget var å reklamere for en fotballkamp mellom Fredrikstad fotballklubb og Lillestrøm sportsklubb hvor målet var at FFK skulle sette en ny publikumsrekord på hjemmebane.",
-            "list": {
-                "title": "",
-                "listItems": [
-                    
-                ]
-            }
+            "description": "<br>En av mine første Bannerwise prosjekter. Oppdraget var å reklamere for en fotballkamp mellom Fredrikstad fotballklubb og Lillestrøm sportsklubb hvor målet var at FFK skulle sette en ny publikumsrekord på hjemmebane."
+        }
+    ],
+    "tools": [
+        {
+            "icon": "css",
+            "name": "CSS",
+            "skill": 95
+        },
+        {
+            "icon": "js",
+            "name": "Javascript",
+            "skill": 85
+        },
+        {
+            "icon": "wp",
+            "name": "WordPress",
+            "skill": 90
+        },
+        {
+            "icon": "csharp",
+            "name": "C#",
+            "skill": 70
+        },
+        {
+            "icon": "mysql",
+            "name": "MySQL",
+            "skill": 65
+        },
+        {
+            "icon": "php",
+            "name": "PHP",
+            "skill": 55
+        },
+        {
+            "icon": "photoshop",
+            "name": "Photoshop",
+            "skill": 90
+        },
+        {
+            "icon": "premiere",
+            "name": "Premiere Pro",
+            "skill": 85
         }
     ]
 }

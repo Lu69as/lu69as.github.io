@@ -1,8 +1,11 @@
+let page = window.location.href;
+
+
+
 // --------------------------------------------------------------------------------------- //
-// Import portfolio items and hobbies from json file                                      //
+// Import all info from json file                                                         //
 // ------------------------------------------------------------------------------------- //
 {
-    let page = window.location.href;    
     fetch('/src/info.json')
         .then((response) => response.json())
         .then((json) => {
@@ -63,15 +66,11 @@
                     
                     if (e.relevant) gridItem.innerHTML += `<img class="relevant" src="/img/portfolio/relevant.png">`;
     
-                    if (e.list.listItems.length > 0) {
-                        gridItem.innerHTML += `<br><p>${e.list.title}</p>`;
-                        let list = document.createElement("ul");
-                        e.list.listItems.forEach((l) => e.innerHTML += `<li>${l.desc}</li>` );
-                        gridItem.appendChild(list);
-                    };
-    
                     gridItem.addEventListener("click", () => {
                         let portfolioDesc = document.querySelector(".portfolioDesc");
+
+                        if (portfolioDesc.getBoundingClientRect().bottom < 0)
+                            portfolioDesc.scrollIntoView();
     
                         portfolioDesc.querySelector("img").style.transform = "translateX(-20px)";
                         portfolioDesc.querySelector("img").style.opacity = "0";
@@ -89,6 +88,21 @@
                     document.querySelector("#portfolio .container").appendChild(gridItem);
                 })
                 document.querySelector("#portfolio .container").firstElementChild.click();
+            }
+    
+            else if (page.includes("cv")) {
+                json.tools.forEach((e) => {
+                    let gridItem = document.createElement("div");
+                    gridItem.innerHTML = `
+                        <div class="level"><div style="
+                            width: ${e.skill}%; 
+                            filter: hue-rotate(-${(100 - e.skill) * 1.5}deg)
+                        "></div></div>
+                        <img src="/img/svg-icons/${e.icon}.svg">
+                        <h3>${e.name}</h3>
+                    `
+                    document.querySelector(".tools").appendChild(gridItem)
+                })
             }
     });
 }
@@ -134,26 +148,37 @@ window.onerror = function (msg, url, line) {
 
 
 
-// --------------------------------------------------------------------------------------- //
-// Check Light / Dark mode Javascript Code                                                //
-// ------------------------------------------------------------------------------------- //
 {
-    if (localStorage.getItem("color") == "moon")
-        document.body.classList.add("dark-mode");
-    
-    document.querySelectorAll("nav .colorMode svg").forEach((e) => {
-        e.addEventListener("click", () => { 
-            if (e.classList[0] == "moon") {
-                document.body.classList.add("dark-mode");
-                localStorage.setItem("color", "moon");
-            }
-            else {
-                document.body.classList.remove("dark-mode");
-                localStorage.setItem("color", "sun");
-            };
-        });
-    });
+    if (page.includes("aktuelt")) {
+        fetch('/aktuelt/posts.html')
+            .then(response => { return response.text() })
+            .then(html => {
+                let articles = document.createElement("body");
+                articles.innerHTML = html;
+
+                articles.childNodes.forEach((e) => {
+                    if (e.innerHTML == undefined) return;
+                    let article = document.createElement("div");
+                    article.innerHTML = e.innerHTML;
+
+                    article.querySelectorAll("a").forEach((a) => a.addEventListener("click", () => {
+                        let paper = document.querySelector(".paper")
+                        paper.classList.add("open");
+                        paper.innerHTML = article.innerHTML;
+                        paper.querySelectorAll("a").forEach((ap) => ap.outerHTML = ap.innerHTML);
+
+                        document.addEventListener("click", (evt) => {
+                            if (evt.target.id == "blog" || evt.target.classList[0] == "close") paper.classList.remove("open");
+                        });
+                        paper.innerHTML += '<div class="close"></div>';
+                    }))
+
+                    document.querySelector(".container").appendChild(article)
+                })
+            });
+    }
 }
+
 
 
 
