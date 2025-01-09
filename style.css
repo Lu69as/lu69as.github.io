@@ -68,9 +68,9 @@ body:has(#google_translate_element) {
 }
 
 
-.cky-overlay { border-radius: 0px; }
-.cky-consent-container { z-index: 999999999; }
-.cky-overlay:has(~ .cky-consent-container:not(.cky-hide)) { display: block; }
+.cky-overlay { border-radius: 0px !important; }
+.cky-consent-container { z-index: 9999999999 !important; }
+.cky-overlay:has(~ .cky-consent-container:not(.cky-hide)) { display: block !important; }
 .cky-notice-des { margin-bottom: 10px !important; }
 
 
