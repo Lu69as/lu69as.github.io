@@ -67,6 +67,13 @@ body:has(#google_translate_element) {
     }
 }
 
+
+.cky-overlay { border-radius: 0px; }
+.cky-consent-container { z-index: 999999999; }
+.cky-overlay:has(~ .cky-consent-container:not(.cky-hide)) { display: block; }
+.cky-notice-des { margin-bottom: 10px !important; }
+
+
 footer {
     background: var(--section-bg);
     border-radius: 0 !important;
