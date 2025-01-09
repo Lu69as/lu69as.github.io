@@ -155,7 +155,9 @@ window.onerror = function (msg, url, line) {
 }
 
 
-
+// --------------------------------------------------------------------------------------- //
+// Import posts from html into blog page                                                  //
+// ------------------------------------------------------------------------------------- //
 {
     if (page.includes("aktuelt")) {
         fetch('/aktuelt/posts.html')
@@ -186,7 +188,6 @@ window.onerror = function (msg, url, line) {
             });
     }
 }
-
 
 
 
@@ -231,7 +232,7 @@ window.onerror = function (msg, url, line) {
             if (e.getBoundingClientRect().y < window.innerHeight && e.innerHTML < 1) {
                 console.log(e.getBoundingClientRect().y + " / " + window.innerHeight + " + " + e.innerHTML)
                 for (let i = 0; i < e.getAttribute("alt"); i++)
-                    setTimeout(() => e.innerHTML = e.innerHTML - 0 + 1, 1000 / i);
+                    setTimeout(() => e.innerHTML = e.innerHTML - 0 + 1, i * 10);
             }
             else if (e.getBoundingClientRect().y > window.innerHeight) e.innerHTML = 0;
         });

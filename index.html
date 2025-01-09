@@ -72,7 +72,7 @@
       <article id="om">
         <div class="desc-container">
           <div class="desc scroll-appear-item">
-            <h2><img src onerror="this.parentElement.innerHTML = new Date().getFullYear() - 2023 + '+'"></h2>
+            <h2><img src onerror="this.outerHTML = new Date().getFullYear() - 2023 + '+'"></h2>
             <h3>År med erfaring</h3>
           </div>
           <div class="desc scroll-appear-item">
@@ -92,7 +92,8 @@
           <div>
             <h2>Om meg</h2>
             <p>
-              Jeg er 18 år gammel og jobber innen programmering, med hovedfokus på front-end utvikling. Jeg har også erfaring med
+              Jeg er <img src onerror="this.outerHTML = Math.floor((new Date() - new Date('2006-07-15')) / 31536000000)">
+              år gammel og jobber innen programmering, med hovedfokus på front-end utvikling. Jeg har også erfaring med
               back-end, noe som gir meg en allsidig forståelse av utviklingsprosessen. <br><br>
               For tiden bor jeg i Sellebakk, Fredrikstad, og jobber som lærling hos Relevant reklamebyrå. 
               Gjennom denne stillingen har jeg fått muligheten til å utvikle ferdighetene
