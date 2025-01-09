@@ -511,7 +511,7 @@ section {
         gap: 35px;
         position: relative;
 
-        background: #ffac97;
+        background: linear-gradient(220deg, var(--primary), var(--secondary));
         box-shadow: 0 0 0 1px, 6px 6px, -6px 6px;
 
         .desc {
