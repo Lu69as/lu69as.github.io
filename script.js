@@ -132,6 +132,7 @@ window.onerror = function (msg, url, line) {
       .then(response => { return response.text() })
       .then(html => document.querySelectorAll("nav").forEach((e) => {
         e.innerHTML = html;
+
         fetch('/src/footer.html')
           .then(response => { return response.text() })
           .then(html => document.querySelectorAll("footer").forEach((e) => {
@@ -142,13 +143,13 @@ window.onerror = function (msg, url, line) {
                 e.addEventListener("transitionend", () => e.style.setProperty('--beforeLeft', '0'), { once: true })
             }));
 
-            document.querySelectorAll("footer .some a").forEach((e) => e.addEventListener("mouseenter", (evt) => {
-                if (evt.layerX > e.offsetWidth / 2)
-                    e.style.transform = "scale(1.05) rotate(5deg)";
+            document.querySelectorAll("footer .some a").forEach((a) => a.addEventListener("mouseenter", (evt) => {
+                if (evt.layerX > a.offsetWidth / 2)
+                    a.style.transform = "scale(1.05) rotate(5deg)";
                 else
-                    e.style.transform = "scale(1.05) rotate(-5deg)";
+                    a.style.transform = "scale(1.05) rotate(-5deg)";
 
-                e.addEventListener("mouseleave", () => e.style.transform = "scale(1) rotate(0deg)", { once: true })
+                a.addEventListener("mouseleave", () => a.style.transform = "scale(1) rotate(0deg)", { once: true })
             }));
         }));
     }));
@@ -432,10 +433,11 @@ window.onerror = function (msg, url, line) {
         });
     
         let color = window.getComputedStyle(document.querySelector("body")).getPropertyValue('--secondary');
+        let color2 = window.getComputedStyle(document.querySelector("body")).getPropertyValue('--primary');
     
         polygonSeries.data = [{
                 "id": "NO",
-                "fill": am4core.color(color)
+                "fill": am4core.color(color2)
             }, {
                 "id": "SE",
                 "fill": am4core.color(color)
