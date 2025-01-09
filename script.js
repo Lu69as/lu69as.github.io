@@ -94,14 +94,22 @@ let page = window.location.href;
                 json.tools.forEach((e) => {
                     let gridItem = document.createElement("div");
                     gridItem.innerHTML = `
-                        <div class="level"><div style="
-                            width: ${e.skill}%; 
-                            filter: hue-rotate(-${(100 - e.skill) * 1.5}deg)
-                        "></div></div>
+                        <div class="border"></div>
                         <img src="/img/svg-icons/${e.icon}.svg">
-                        <h3>${e.name}</h3>
+                        <h3 class="scroll-count-item" alt="${e.skill}">0</h3>
+                        <h4>${e.name}</h4>
                     `
                     document.querySelector(".tools").appendChild(gridItem)
+                })
+                json.languages.forEach((e) => {
+                    let gridItem = document.createElement("div");
+                    gridItem.innerHTML = `
+                        <div class="border"></div>
+                        <img src="/img/svg-icons/${e.icon}.svg">
+                        <h3 class="scroll-count-item" alt="${e.skill}">0</h3>
+                        <h4>${e.name}</h4>
+                    `
+                    document.querySelector(".languages").appendChild(gridItem)
                 })
             }
     });
@@ -206,9 +214,29 @@ window.onerror = function (msg, url, line) {
                 e.style.transform = "translateY(35px)";
                 e.style.opacity = "0";
             }
-        })
+        });
     } 
     appearItem();
+}
+
+
+
+// --------------------------------------------------------------------------------------- //
+// Make Items with numbers wount upwards when Visible After Scroll Code - Scroll animation//
+// ------------------------------------------------------------------------------------- //
+{
+    function countItem() {
+        let list = document.querySelectorAll(".scroll-count-item");
+        list.forEach((e) => {
+            if (e.getBoundingClientRect().y < window.innerHeight && e.innerHTML < 1) {
+                console.log(e.getBoundingClientRect().y + " / " + window.innerHeight + " + " + e.innerHTML)
+                for (let i = 0; i < e.getAttribute("alt"); i++)
+                    setTimeout(() => e.innerHTML = e.innerHTML - 0 + 1, 1000 / i);
+            }
+            else if (e.getBoundingClientRect().y > window.innerHeight) e.innerHTML = 0;
+        });
+    } 
+    countItem();
 }
 
 
@@ -240,6 +268,7 @@ window.onerror = function (msg, url, line) {
     document.addEventListener("scroll", () => {
         setTimeout(appearItem, 400);
         appearItem();
+        countItem();
     
         readmoreRotate();
 
@@ -315,7 +344,7 @@ window.onerror = function (msg, url, line) {
 
 
 // --------------------------------------------------------------------------------------- //
-// Contact Cancel button and Globe code from amcharts                                     //
+// Contact buttons and Globe code from amcharts                                           //
 // ------------------------------------------------------------------------------------- //
 {
     if (window.location.href.includes("kontakt")) {
@@ -324,6 +353,15 @@ window.onerror = function (msg, url, line) {
                 e.value = "";
             });
         });
+
+        document.querySelectorAll(".reason > div").forEach((e) => {
+            e.addEventListener("click", () => {
+                document.querySelectorAll(".reason > div").forEach((a) => a.classList.remove("active"));
+                e.classList.add("active");
+                document.querySelector(".window form .hidden-field-emne").value
+                    = e.firstElementChild.lastElementChild.innerHTML;
+            });
+        })
     
         /**
          * ---------------------------------------
