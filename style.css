@@ -203,6 +203,11 @@ body {
     color: var(--font-color);
     background: var(--bg-color);
 
+    font {
+        font-family: inherit !important;
+        font-weight: inherit !important;
+    }
+
     :not(.background) {
         transition: 400ms;
         transition-delay: 0ms;
