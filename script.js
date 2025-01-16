@@ -72,7 +72,7 @@ let page = window.location.href;
                         if (portfolioDesc.getBoundingClientRect().bottom < 0)
                             portfolioDesc.scrollIntoView();
     
-                        portfolioDesc.querySelector("img").style.transform = "translateX(-20px)";
+                        portfolioDesc.querySelector("img").style.transform = "translateX(-35px) rotateY(15deg)";
                         portfolioDesc.querySelector("img").style.opacity = "0";
                         portfolioDesc.lastElementChild.style.paddingTop = "50px";
                 
@@ -94,20 +94,20 @@ let page = window.location.href;
                 json.tools.forEach((e) => {
                     let gridItem = document.createElement("div");
                     gridItem.innerHTML = `
-                        <div class="border"></div>
-                        <img src="/img/svg-icons/${e.icon}.svg">
-                        <h3 class="scroll-count-item" alt="${e.skill}">0</h3>
-                        <h4>${e.name}</h4>
+                    <img src="/img/svg-icons/${e.icon}.svg">
+                    <h3 class="scroll-count-item" alt="${e.skill}">0</h3>
+                    <h4>${e.name}</h4>
+                    <div class="mask"></div>
                     `
                     document.querySelector(".tools").appendChild(gridItem)
                 })
                 json.languages.forEach((e) => {
                     let gridItem = document.createElement("div");
                     gridItem.innerHTML = `
-                        <div class="border"></div>
-                        <img src="/img/svg-icons/${e.icon}.svg">
-                        <h3 class="scroll-count-item" alt="${e.skill}">0</h3>
-                        <h4>${e.name}</h4>
+                    <img src="/img/svg-icons/${e.icon}.svg">
+                    <h3 class="scroll-count-item" alt="${e.skill}">0</h3>
+                    <h4>${e.name}</h4>
+                    <div class="mask"></div>
                     `
                     document.querySelector(".languages").appendChild(gridItem)
                 })
@@ -350,11 +350,11 @@ window.onerror = function (msg, url, line) {
 // ------------------------------------------------------------------------------------- //
 {
     if (window.location.href.includes("kontakt")) {
-        document.querySelector("#contact form button.cancel").addEventListener("click", () => {
-            document.querySelectorAll("#contact form :is(input, textarea)").forEach((e) => {
-                e.value = "";
-            });
-        });
+        // document.querySelector("#contact form button.cancel").addEventListener("click", () => {
+        //     document.querySelectorAll("#contact form :is(input, textarea)").forEach((e) => {
+        //         e.value = "";
+        //     });
+        // });
 
         document.querySelectorAll(".reason > div").forEach((e) => {
             e.addEventListener("click", () => {
@@ -363,7 +363,13 @@ window.onerror = function (msg, url, line) {
                 document.querySelector(".window form .hidden-field-emne").value
                     = e.firstElementChild.lastElementChild.innerHTML;
             });
-        })
+        });
+
+
+        document.querySelectorAll(".map-globe .tabs-select > div").forEach((e) => e.addEventListener("click", () => {
+            document.querySelectorAll(".map-globe .position .active").forEach((t) => t.classList.remove("active"));
+            document.querySelectorAll(".map-globe .position ." + e.classList[0]).forEach((t) => t.classList.add("active"));
+        }))
     
         /**
          * ---------------------------------------
@@ -387,10 +393,9 @@ window.onerror = function (msg, url, line) {
         chart.geodata = am4geodata_worldLow;
     
         // Set projection
-        chart.projection = new am4maps.projections.Orthographic();
-        chart.panBehavior = "rotateLongLat";
+        chart.projection = new am4maps.projections.EqualEarth();
+        chart.panBehavior = "rotateLong";
         chart.maxZoomLevel = 1;
-        chart.deltaLatitude = -30;
         chart.padding(0);
     
         chart.backgroundSeries.mapPolygons.template.polygon.fill = am4core.color("#aadaff");
@@ -415,7 +420,7 @@ window.onerror = function (msg, url, line) {
     
         let animation;
         setTimeout(function(){
-        animation = chart.animate({property:"deltaLongitude", to:100000}, 20000000);
+            animation = chart.animate({property:"deltaLongitude", to:100000}, 20000000);
         }, 0)
     
         let animationTimeOut;

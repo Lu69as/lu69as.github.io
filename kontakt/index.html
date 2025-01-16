@@ -15,6 +15,17 @@
   <meta property="og:url" content="https://lukasokken.com/kontakt" />
   <link rel="canonical" href="https://lukasokken.com" />
 
+  <script type="speculationrules">
+    {
+      "prerender": [
+        {
+          "urls": [ "/", "/#om", "/cv/", "/hobbyer/", "/portefolje/", "/aktuelt/", "/kontakt/" ],
+          "eagerness": "moderate"
+        }
+      ]
+    }
+  </script>
+
   <script src="https://kit.fontawesome.com/d11723fac3.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="/style.css">
 
@@ -37,60 +48,32 @@
       <article id="contact">
         <h1>Kontakt meg!</h1>
 
-        <div class="text-image">
-          <div>
-            <div class="reason">
-              <div class="website">
-                <div>
-                  <img src="/img/svg-icons/laptop-solid.svg" alt="Laptop icon">
-                  <h4>Moderne nettside</h4>
-                </div>
-              </div>
-              <div class="coding">
-                <div>
-                  <img src="/img/svg-icons/code-solid.svg" alt="Code icon">
-                  <h4>Hjelp med koding</h4>
-                </div>
-              </div>
-              <div class="coding">
-                <div>
-                  <img src="/img/svg-icons/ranking-star-solid.svg" alt="Marketing icon">
-                  <h4>Markeds- føring</h4>
-                </div>
-              </div>
+        <div class="map-globe">
+          <div class="position">
+            <div class="tabs-select">
+              <div class="map active">Min beliggenhet</div>
+              <div class="globe">Land jeg har vært i</div>
             </div>
-            <div class="window">
-              <h2>Kontaktinformasjon</h2>
-              <div class="contacts">
-                <a href="">post@lukasokken.com</a>
-                <a href="">+47 41 07 35 90</a>
+            <div class="tabs">
+              <div class="map active">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d16324.994719943146!2d10.98809860329432!3d59.23900737203986!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4644039d66d8fc29%3A0xdf435cb8c68d1ccf!2sSellebakk!5e0!3m2!1sen!2sno!4v1736943103223!5m2!1sen!2sno"
+                  width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"></iframe>
               </div>
-              <h2>Kontaktskjema</h2>
-              <form action="https://formcarry.com/s/ggg7Sx8KEko" method="POST" enctype="multipart/form-data">
-                <input type="hidden" name="Første-emne" class="hidden-field-emne">
-                <input type="text" name="Navn" required="yes" placeholder="Fullt Navn*">
-                <input type="email" name="E-post" required="yes" placeholder="E-post*">
-                <input type="text" name="Emne" required="yes" placeholder="Emne*">
-
-                <textarea name="Melding" required="yes" placeholder="Beskjed*"></textarea>
-
-                <div class="gdpr">
-                  <p>Jeg er forpliktet til å beskytte og respektere personvernet ditt, og jeg bruker bare din personlige informasjon til å levere produktene og tjenestene du ber om fra meg. </p>
-                  <div class="check">
-                    <div class="customGdpr"></div>
-                    <input type="checkbox" name="gdpr agreement" id="gdpr" required="yes">
-                    <label for="gdpr">Jeg godtar lagring og behandling av mine personopplysninger.</label>
-                  </div>
+              <div class="globe">
+                <div class="countries">
+                  <script src="https://www.amcharts.com/lib/4/core.js"></script>
+                  <script src="https://www.amcharts.com/lib/4/maps.js"></script>
+                  <script src="https://www.amcharts.com/lib/4/geodata/worldLow.js"></script>
+                  <script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
+                  <div id="chartdiv"></div>
+                  <img src="/img/logo.png" alt="Logo">
                 </div>
-
-                <div class="submit-container">
-                  <button type="button" class="cancel btn1">Avbryt</button>
-                  <button type="submit" class="btn1">Send</button>
-                </div>
-              </form>
+              </div>
             </div>
           </div>
-          <div>
+          <div class="text">
             <h2>Skreddersydde nettsider for ditt firma</h2>
             <p>
               Som en ung utvikler har jeg mange muligheter til å hjelpe deg med å lage en nettside som gir firmaet ditt den
@@ -98,21 +81,70 @@
               teknologier, noe som gjør meg godt rustet til å levere funksjonelle og visuelt attraktive løsninger. Samtidig har jeg et
               stort engasjement for å forstå dine behov og skape en nettside som reflekterer firmaets identitet og mål.
             </p>
-            <br><br>
+          </div>
+        </div>
+
+        <div class="contact-info">
+          <div>
+            <a href="mailto:post@lukasokken.com">
+              <div><img src="/img/svg-icons/envelope-solid.svg" alt="Mail"></div>
+              <div>
+                <h5>Mail</h5>
+                <p>post@lukasokken.com <br> youtube@lukasokken.com</p>
+              </div>
+            </a>
+            <a href="tel:+4741074590">
+              <div><img src="/img/svg-icons/phone-volume-solid.svg" alt="Phone"></div>
+              <div>
+                <h5>Telefon</h5>
+                <p>+47 41 07 35 90</p>
+              </div>
+            </a>
+            <a target="_blank" rel="noreferer" href="https://www.google.com/maps?ll=59.238987,11.008698&z=13&t=m&hl=en&gl=NO&mapclient=embed&q=Sellebakk">
+              <div><img src="/img/svg-icons/map-location-dot-solid.svg" alt="Map"></div>
+              <div>
+                <h5>Beliggenhet</h5>
+                <p>Sellebakk 1653, <br> Fredrikstad, Østfold</p>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div class="contact-form">
+          <div class="text">
+            <h2>Ung, engasjert og konkurransedyktig</h2>
             <p>
               Selv om jeg er dyktig i det jeg gjør, er det ingen vei utenom å erkjenne at jeg fortsatt er ung og relativt uerfaren
               sammenlignet med mer etablerte utviklere. Likevel ser jeg dette som en styrke - jeg er nysgjerrig, lærevillig og
               oppdatert på de nyeste trendene innen webutvikling. I tillegg tilbyr jeg konkurransedyktige priser, som gir deg
               muligheten til å få en profesjonell nettside uten de høye kostnadene som ofte følger med etablerte byråer.
             </p>
-            <div class="countries">
-                <script src="https://www.amcharts.com/lib/4/core.js"></script>
-                <script src="https://www.amcharts.com/lib/4/maps.js"></script>
-                <script src="https://www.amcharts.com/lib/4/geodata/worldLow.js"></script>
-                <script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
-                <div id="chartdiv"></div>
-                <img src="/img/logo.png" alt="Logo">
+            <div class="lottieContainer">
+              <iframe src="https://lottie.host/embed/82c3f375-0280-4160-a7a2-b0c2a5dea4dc/pigbnVs3ka.lottie"></iframe>
             </div>
+          </div>
+          <div class="form">
+            <form action="https://formcarry.com/s/ggg7Sx8KEko" method="POST" enctype="multipart/form-data">
+              <input type="text" name="Navn" required="yes" placeholder="Fullt Navn*">
+              <input type="email" name="E-post" required="yes" placeholder="E-post*">
+              <input type="text" name="Emne" required="yes" placeholder="Emne*">
+
+              <textarea name="Melding" required="yes" placeholder="Beskjed*"></textarea>
+
+              <div class="gdpr">
+                <p>Jeg er forpliktet til å beskytte og respektere personvernet ditt, og jeg bruker bare din personlige informasjon til å levere produktene og tjenestene du ber om fra meg. </p>
+                <div class="check">
+                  <div class="customGdpr"></div>
+                  <input type="checkbox" name="gdpr agreement" id="gdpr" required="yes">
+                  <label for="gdpr">Jeg godtar lagring og behandling av mine personopplysninger.</label>
+                </div>
+              </div>
+
+              <div class="submit-container">
+                <button type="button" class="cancel btn1">Avbryt</button>
+                <button type="submit" class="btn1">Send</button>
+              </div>
+            </form>
           </div>
         </div>
       </article>
