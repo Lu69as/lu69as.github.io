@@ -1,7 +1,6 @@
 let page = window.location.href;
 
 
-
 // --------------------------------------------------------------------------------------- //
 // Import all info from json file                                                         //
 // ------------------------------------------------------------------------------------- //
@@ -111,16 +110,12 @@ let page = window.location.href;
                     `
                     document.querySelector(".languages").appendChild(gridItem)
                 })
+
+                let project = json.portfolio[json.portfolio.length - 1];
+                document.querySelector(".last-project .text").innerHTML = project.description;
+                document.querySelector(".last-project img").setAttribute("src", project.image)
             }
     });
-}
-
-
-
-window.onerror = function (msg, url, line) {
-    console.log("Error: " + msg + "<br>");
-    console.log("URL: " + url + "<br>");
-    console.log("Line: " + line + "<br>");
 }
 
 
@@ -278,68 +273,6 @@ window.onerror = function (msg, url, line) {
             document.querySelector(".backTop").style.transform = "translateX(0px)";
         else
             document.querySelector(".backTop").style.transform = "translateX(100px)";
-    });
-}
-
-
-
-// --------------------------------------------------------------------------------------- //
-// Recommendations Slider Javascript Code                                                 //
-// ------------------------------------------------------------------------------------- //
-{
-    function handleRecommendationsMove() {
-        let recommedations = document.querySelector(".recommendations");
-        recommedations.style.marginLeft = recommedations.getAttribute("page") * -102.5 + "%";
-        
-        let btns = recommedations.previousElementSibling.querySelectorAll("div");
-        btns.forEach((e) => e.style.opacity = "1")
-    
-        if (recommedations.getAttribute("page") == recommedations.childElementCount - 1)
-            btns[1].style.opacity = ".7"
-        else if (recommedations.getAttribute("page") == 0)
-            btns[0].style.opacity = ".7"
-    }
-    
-    document.querySelectorAll(".recommendations-btns > div").forEach((e) => {
-        e.addEventListener("click", () => {
-            let recommedations = document.querySelector(".recommendations");
-            let page = recommedations.getAttribute("page");
-
-            if (e.getAttribute("page") == "next" && page < recommedations.childElementCount - 1)
-                recommedations.setAttribute("page", page - 0 + 1);
-        
-            else if (e.getAttribute("page") == "past" && page > 0)
-                recommedations.setAttribute("page", page - 1);
-        
-            handleRecommendationsMove();
-        })
-    })
-    
-    let mousePos;
-    function handleRecommendationsMouseMove() {
-        let recommedations = document.querySelector(".recommendations");
-        let page = recommedations.getAttribute("page");
-    
-        if (event.clientX - mousePos < -200 && page < recommedations.childElementCount - 1) {
-            recommedations.setAttribute("page", page - 0 + 1);
-            document.removeEventListener("mousemove", handleRecommendationsMouseMove, false);
-            handleRecommendationsMove();
-        }
-        else if (event.clientX - mousePos > 200 && page > 0) {
-            recommedations.setAttribute("page", page - 1);
-            document.removeEventListener("mousemove", handleRecommendationsMouseMove, false);
-            handleRecommendationsMove();
-        };
-    };
-    
-    document.querySelectorAll(".recommendations .slide").forEach((e) => {
-        e.addEventListener("mousedown", () => {
-            mousePos = event.clientX;
-            document.addEventListener("mousemove", handleRecommendationsMouseMove, false);
-            e.addEventListener("mouseup", () => {
-                document.removeEventListener("mousemove", handleRecommendationsMouseMove, false);
-            });
-        });
     });
 }
 

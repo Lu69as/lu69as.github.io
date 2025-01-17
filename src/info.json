@@ -36,28 +36,28 @@
             "image": "/img/portfolio/voting-site.jpg",
             "tools": "ASP.net C#, MySQL",
             "link": "https://github.com/lu69as/voting-site",
-            "description": "<br>En nettside jeg fikk på skolen som fort ble til et lidenskapsprosjekt.<br><br>Denne nettsiden har mange små funksjoner og og koder jeg har skrevet som gjør den rask, brukervennlig og den ser kul ut."
+            "description": "<br>Dette prosjektet startet som en skoleoppgave, men utviklet seg raskt til et lidenskapsprosjekt hvor jeg ønsket å utforske og forbedre ulike aspekter av webutvikling. <br><br>Nettsiden er en stemmeplattform med en rekke funksjoner som forbedrer både brukeropplevelsen og ytelsen. Jeg har implementert optimalisert databasehåndtering, sikker stemmegivning og et moderne, responsivt design. Gjennom dette prosjektet har jeg opparbeidet meg dypere forståelse for ASP.NET, C# og MySQL, samt hvordan man bygger effektive og skalerbare webapplikasjoner."
         },
         {
             "relevant": false,
             "image": "/img/portfolio/react-site.jpg",
             "tools": "React JS, SCSS",
             "link": "https://github.com/lu69as/website-v2",
-            "description": "<br>En personling nettside hvor jeg valgte å lære meg React rammeverket.<br>Jeg endte opp med å forstå relativt mye av hvordan det funker og hvis jeg hadde fått en fremtidig oppgave hvor det kreves å bruke et javascript rammeverk, vet jeg at dette prosjektet kommer til å hjelpe."
+            "description": "<br>Dette er en personlig nettside jeg utviklet for å lære meg React-rammeverket og forbedre ferdighetene mine innen moderne JavaScript-utvikling. <br><br>Gjennom prosjektet lærte jeg hvordan komponentbaserte strukturer fungerer, samt hvordan man håndterer state management og optimalisering av ytelse i en React-applikasjon. Siden har et stilrent design bygget med SCSS og er fullt responsiv for både mobil og desktop. Erfaringene fra dette prosjektet har gitt meg et solid grunnlag for fremtidige oppgaver som krever bruk av JavaScript-rammeverk."
         },
         {
             "relevant": true,
             "image": "/img/portfolio/komfort-solskjerming.jpg",
             "tools": "WordPress, MySQL",
             "link": "https://komfortsolskjerming.no/",
-            "description": "<br>Mitt første egne nettsideprosjekt hos Relevant hvor jeg var med / ledet alle deler fra produksjon til publisering. <br><br>Av å publisere denne siden lærte jeg mye om optimalisering og å gjøre nettsiden klar for masse brukere. <br><br>Jeg er veldig stolt av hvordan nettsiden endte opp og det bled kunden og."
+            "description": "<br>Dette var mitt første komplette nettsideprosjekt hos Relevant, hvor jeg hadde en sentral rolle i hele prosessen – fra planlegging og design til utvikling og lansering. <br><br>Målet var å skape en brukervennlig, estetisk tiltalende og rask nettside for Komfort Solskjerming. Jeg arbeidet med WordPress for å sikre enkel administrasjon for kunden, optimaliserte databasen for raskere lastetider og implementerte SEO-vennlige løsninger for bedre synlighet i søkemotorer. <br><br>Lanseringen av denne nettsiden ga meg verdifull innsikt i ytelsesoptimalisering, brukervennlighet og hvordan man tilrettelegger en nettside for et stort antall besøkende. Kunden var svært fornøyd med sluttresultatet, og jeg er stolt av hvordan prosjektet ble gjennomført."
         },
         {
             "relevant": true,
             "image": "/img/portfolio/FFK-Banner.jpg",
             "tools": "Bannerwise, Photoshop",
             "link": "https://client.bannerwise.io/#/share/66f3c1c1b77f5bb651dc80f7",
-            "description": "<br>En av mine første Bannerwise prosjekter. Oppdraget var å reklamere for en fotballkamp mellom Fredrikstad fotballklubb og Lillestrøm sportsklubb hvor målet var at FFK skulle sette en ny publikumsrekord på hjemmebane."
+            "description": "<br>Dette var et av mine første prosjekter med Bannerwise, hvor jeg designet en digital reklamekampanje for en fotballkamp mellom Fredrikstad Fotballklubb og Lillestrøm Sportsklubb. <br><br> Målet var å lage engasjerende bannere for å promotere kampen og bidra til at FFK satte ny publikumsrekord. Jeg brukte Photoshop til design og Bannerwise for å optimalisere og animere innholdet. <br><br> Gjennom prosjektet utviklet jeg ferdigheter innen digital markedsføring, visuell kommunikasjon og bannerdesign, noe som ga meg verdifull erfaring med effektive annonser for sportsarrangementer."
         }
     ],
     "tools": [

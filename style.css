@@ -411,6 +411,7 @@ section {
         z-index: 0;
         opacity: .06;
         background-image: none;
+        filter: blur(2px);
     }
 
     .some {
@@ -448,12 +449,24 @@ section {
         font-style: normal;
         line-height: 110px;
 
-        span {
+        .gradient {
             font-family: inherit;
+            font-weight: inherit;
             background: linear-gradient(20deg, var(--primary), var(--secondary));
             background-clip: text;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+        }
+        .shaddow {
+            font-family: inherit;
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index: -1;
+            color: #00000020;
+            font-weight: inherit;
+            transform: translate(-.8%, -.8%);
+            transform-origin: left;
         }
     }
     .readmore {
@@ -839,45 +852,7 @@ section {
         font-family: var(--dosis);
         font-weight: 700;
         margin-bottom: -40px;
-    }
-
-
-    table {
-        tr {
-            padding: 40px 0;
-            display: block;
-            border-radius: 0;
-            border-top: solid 1px var(--section-primary);
-            border-bottom: solid 1px var(--section-primary);
-            column-gap: 40px;
-
-            &:not(:last-child) {
-                border-bottom: 0;
-            }
-
-            td {
-                vertical-align: top;
-                font-size: 18px;
-
-                p { color: var(--light-font-color); }
-                span, a { color: var(--font-color) !important; }
-            }
-
-            td:nth-child(1) {
-                min-width: 8vw;
-                font-size: 15px;
-            }
-            td:nth-child(2) {
-                min-width: 25vw;
-                span { 
-                    font-size: 25px; 
-                    font-family: var(--bagel);
-                    line-height: 0%;
-                }
-            }
-
-            
-        }
+        margin-top: 60px;
     }
 
     .tools, .languages {
@@ -929,89 +904,11 @@ section {
         }
     }
 
-    .recommendations-btns {
-        margin-bottom: 15px;
-        display: flex;
-        gap: 10px;
-        
-        > div {
-            cursor: pointer;
-            background: var(--primary) !important;
-            height: 60px;
-            width: 60px;
-            border-radius: 10px;
+    .last-project {
+        margin-top: 70px;
 
-            svg {
-                width: 100%;
-                height: 100%;
-                rotate: 90deg;
-
-                path { stroke: #fff }
-            }
-            &:last-child svg { rotate: -90deg; }
-        }
-    }
-    .recommendations {
-        width: 307.5%;
-        display: flex;
-
-        .slide {
-            width: 100%;
-            margin-right: 35px;
-            padding: 40px;
-            
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            
-            img {
-                width: 150px;
-                height: 150px;
-            }
-            img.ai {
-                position: absolute;
-                opacity: .5;
-            }
-
-            > div {
-                margin-top: 10px;
-
-                h3 {
-                    font-size: 25px;
-                    font-family: var(--bagel);
-                    font-weight: lighter;
-                }
-                .title {
-                    font-size: 18px;
-                    color: var(--light-font-color);
-
-                    a { margin-left: 2px; }
-                }
-
-                .stars {
-                    margin-top: 10px;
-                    display: flex;
-
-                    img {
-                        width: 35px;
-                        height: auto;
-                    }
-                }
-            }
-
-            > p {
-                font-size: 18px;
-                color: var(--light-font-color);
-
-                a {
-                    display: block;
-                    margin-top: 20px;
-                }
-            }
-        }
-        .slide:active {
-            cursor: grabbing;
-        }
+        > div:has(img) { width: 40%; }
+        > div:has(p) { width: 60%; padding-top: 0; }
     }
 }
 
