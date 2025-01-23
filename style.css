@@ -605,6 +605,9 @@ nav {
         padding-left: 25px;
         position: relative;
         color: #222;
+        opacity: .4;
+
+        &:hover { opacity: 1; }
 
         span { font-weight: 500; }
 
