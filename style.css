@@ -246,10 +246,33 @@ section {
         overflow: hidden;
     
         > h1 {
-            font-size: 80px;
+            font-size: 60px;
             font-family: var(--bagel) !important;
-            letter-spacing: 4px;
+            letter-spacing: 2px;
             margin: 0;
+
+            span:not(#home span) {
+                display: block;
+                border: solid 2px #eee;
+                width: fit-content;
+                padding: 5px 15px;
+                opacity: .6;
+                
+                font-size: 22px;
+                font-weight: 700 !important;
+                color: #fff;
+
+                display: flex;
+                align-items: center;
+                gap: 5px;
+
+                &::before { 
+                    content: url(/img/svg-icons/code-branch-solid.svg);
+                    display: inline-block;
+                    width: 15px;
+                    height: fit-content;
+                }
+            }
         }
     }
 }
