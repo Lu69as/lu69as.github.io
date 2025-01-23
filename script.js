@@ -90,26 +90,28 @@ let page = window.location.href;
             }
     
             else if (page.includes("cv")) {
-                json.tools.forEach((e) => {
+                json.resume.tools.forEach((e) => {
                     let gridItem = document.createElement("div");
                     gridItem.innerHTML = `
-                    <img src="/img/svg-icons/${e.icon}.svg">
-                    <h3 class="scroll-count-item" alt="${e.skill}">0</h3>
-                    <h4>${e.name}</h4>
-                    <div class="mask"></div>
-                    `
-                    document.querySelector(".tools").appendChild(gridItem)
-                })
-                json.languages.forEach((e) => {
+                        <img src="/img/svg-icons/${e.icon}.svg">
+                        <h3 class="scroll-count-item" alt="${e.skill}">0</h3>
+                        <h4>${e.name}</h4>
+                        <div class="mask"></div>
+                    `;
+                    document.querySelector(".tools").appendChild(gridItem);
+                });
+                json.resume.languages.forEach((e) => {
                     let gridItem = document.createElement("div");
                     gridItem.innerHTML = `
-                    <img src="/img/svg-icons/${e.icon}.svg">
-                    <h3 class="scroll-count-item" alt="${e.skill}">0</h3>
-                    <h4>${e.name}</h4>
-                    <div class="mask"></div>
-                    `
-                    document.querySelector(".languages").appendChild(gridItem)
-                })
+                        <img src="/img/svg-icons/${e.icon}.svg">
+                        <h3 class="scroll-count-item" alt="${e.skill}">0</h3>
+                        <h4>${e.name}</h4>
+                        <div class="mask"></div>
+                    `;
+                    document.querySelector(".languages").appendChild(gridItem);
+                });
+                for (let i = 0; i < json.resume.extra.length; i++)
+                    document.querySelector(".extra span").innerHTML += (i < 1 ? " " : ", ") + json.resume.extra[i];
 
                 let project = json.portfolio[json.portfolio.length - 1];
                 document.querySelector(".last-project .text").innerHTML = project.description;
@@ -128,7 +130,7 @@ let page = window.location.href;
         document.querySelectorAll(".container > article").forEach((e) => {
             e.querySelector(".img").addEventListener("click", () => e.querySelector(".gallery").classList.add("visible") );
             e.querySelector(".img").style.height = e.offsetHeight + "px";
-            
+
             e.querySelector(".gallery").addEventListener("click", (evt) => { 
                 if (evt.target.classList[0] == "gallery") 
                     e.querySelector(".gallery").classList.remove("visible") 

@@ -599,6 +599,29 @@ nav {
             }
         }
     }
+    .extra {
+        margin-top: -35px;
+        font-size: 25px;
+        padding-left: 25px;
+        position: relative;
+        color: #222;
+
+        span { font-weight: 500; }
+
+        &::before {
+            content: " ";
+            display: inline-block;
+            position: absolute;
+            top: 50%; left: 0;
+            transform: translateY(-50%) rotate(45deg);
+            height: 8px;
+            aspect-ratio: 1;
+
+            border: solid 3px #222;
+            border-left: none;
+            border-bottom: none;
+        }
+    }
 
     .last-project {
         margin-top: 70px;

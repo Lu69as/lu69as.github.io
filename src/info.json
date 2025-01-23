@@ -60,48 +60,57 @@
             "description": "<br>Dette var et av mine første prosjekter med Bannerwise, hvor jeg designet en digital reklamekampanje for en fotballkamp mellom Fredrikstad Fotballklubb og Lillestrøm Sportsklubb. <br><br> Målet var å lage engasjerende bannere for å promotere kampen og bidra til at FFK satte ny publikumsrekord. Jeg brukte Photoshop til design og Bannerwise for å optimalisere og animere innholdet. <br><br> Gjennom prosjektet utviklet jeg ferdigheter innen digital markedsføring, visuell kommunikasjon og bannerdesign, noe som ga meg verdifull erfaring med effektive annonser for sportsarrangementer."
         }
     ],
-    "tools": [
-        {
-            "icon": "wp",
-            "name": "WordPress",
-            "skill": 91
-        },
-        {
-            "icon": "photoshop",
-            "name": "Photoshop",
-            "skill": 86
-        },
-        {
-            "icon": "premiere",
-            "name": "Premiere Pro",
-            "skill": 82
-        }
-    ],
-    "languages": [
-        {
-            "icon": "css",
-            "name": "CSS",
-            "skill": 94
-        },
-        {
-            "icon": "js",
-            "name": "Javascript",
-            "skill": 87
-        },
-        {
-            "icon": "csharp",
-            "name": "C#",
-            "skill": 67
-        },
-        {
-            "icon": "mysql",
-            "name": "MySQL",
-            "skill": 73
-        },
-        {
-            "icon": "php",
-            "name": "PHP",
-            "skill": 59
-        }
-    ]
+    "resume": {
+        "tools": [
+            {
+                "icon": "wp",
+                "name": "WordPress",
+                "skill": 91
+            },
+            {
+                "icon": "photoshop",
+                "name": "Photoshop",
+                "skill": 86
+            },
+            {
+                "icon": "premiere",
+                "name": "Premiere Pro",
+                "skill": 82
+            }
+        ],
+        "languages": [
+            {
+                "icon": "css",
+                "name": "CSS",
+                "skill": 94
+            },
+            {
+                "icon": "js",
+                "name": "Javascript",
+                "skill": 87
+            },
+            {
+                "icon": "csharp",
+                "name": "C#",
+                "skill": 67
+            },
+            {
+                "icon": "mysql",
+                "name": "MySQL",
+                "skill": 73
+            },
+            {
+                "icon": "php",
+                "name": "PHP",
+                "skill": 59
+            }
+        ],
+        "extra": [
+            "Notion",
+            "Cloudflare",
+            "React JS",
+            "Illustrator",
+            "Freshdesk"
+        ]
+    }
 }
