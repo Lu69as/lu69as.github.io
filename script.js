@@ -119,161 +119,35 @@ let page = window.location.href;
 }
 
 
-// --------------------------------------------------------------------------------------- //
-// Import navbar and footer from files and create link hover effect                       //
-// ------------------------------------------------------------------------------------- //
-{
-    fetch('/src/navbar.html')
-      .then(response => { return response.text() })
-      .then(html => document.querySelectorAll("nav").forEach((e) => {
-        e.innerHTML = html;
-
-        fetch('/src/footer.html')
-          .then(response => { return response.text() })
-          .then(html => document.querySelectorAll("footer").forEach((e) => {
-            e.innerHTML = html;
-    
-            document.querySelectorAll("a:not(.btn1, .btn2, .readmore, .backTop, .some a)").forEach((e) => e.addEventListener("mouseleave", () => {
-                e.style.setProperty('--beforeLeft', 'initial');
-                e.addEventListener("transitionend", () => e.style.setProperty('--beforeLeft', '0'), { once: true })
-            }));
-
-            document.querySelectorAll("footer .some a").forEach((a) => a.addEventListener("mouseenter", (evt) => {
-                if (evt.layerX > a.offsetWidth / 2)
-                    a.style.transform = "scale(1.05) rotate(5deg)";
-                else
-                    a.style.transform = "scale(1.05) rotate(-5deg)";
-
-                a.addEventListener("mouseleave", () => a.style.transform = "scale(1) rotate(0deg)", { once: true })
-            }));
-        }));
-    }));
-}
-
 
 // --------------------------------------------------------------------------------------- //
-// Import posts from html into blog page                                                  //
+// JS for news page                                                                       //
 // ------------------------------------------------------------------------------------- //
 {
     if (page.includes("aktuelt")) {
-        fetch('/aktuelt/posts.html')
-            .then(response => { return response.text() })
-            .then(html => {
-                let articles = document.createElement("body");
-                articles.innerHTML = html;
-
-                articles.childNodes.forEach((e) => {
-                    if (e.innerHTML == undefined) return;
-                    let article = document.createElement("div");
-                    article.innerHTML = e.innerHTML;
-
-                    article.querySelectorAll("a").forEach((a) => a.addEventListener("click", () => {
-                        let paper = document.querySelector(".paper")
-                        paper.classList.add("open");
-                        paper.innerHTML = article.innerHTML;
-                        paper.querySelectorAll("h2 a, a:has(img)").forEach((ap) => ap.outerHTML = ap.innerHTML);
-
-                        document.addEventListener("click", (evt) => {
-                            if (evt.target.id == "blog" || evt.target.classList[0] == "close") paper.classList.remove("open");
-                        });
-                        paper.innerHTML += '<div class="close"></div>';
-                    }))
-
-                    document.querySelector(".container").appendChild(article)
-                })
+        document.querySelectorAll(".container > article").forEach((e) => {
+            e.querySelector(".img").addEventListener("click", () => e.querySelector(".gallery").classList.add("visible") );
+            e.querySelector(".img").style.height = e.offsetHeight + "px";
+            
+            e.querySelector(".gallery").addEventListener("click", (evt) => { 
+                if (evt.target.classList[0] == "gallery") 
+                    e.querySelector(".gallery").classList.remove("visible") 
             });
-    }
-}
 
+            let galleryImg = e.querySelector(".gallery img");
+            let galleryImgs = galleryImg.getAttribute("images").split(", ");
+            galleryImg.setAttribute("src", galleryImgs[galleryImg.getAttribute("current-image")]);
 
+            galleryImg.parentElement.querySelectorAll("div").forEach((d) => d.addEventListener("click", () => {
+                let nextImage = galleryImg.getAttribute("current-image");
+                if (d.classList[0] == "next") nextImage = nextImage >= galleryImgs.length - 1 ? 0 : nextImage-0 + 1;
+                else nextImage = nextImage <= 0 ? galleryImgs.length - 1 : nextImage - 1;
 
-// --------------------------------------------------------------------------------------- //
-// Make Items Appear When Visible After Scroll Code - Scroll animation                    //
-// ------------------------------------------------------------------------------------- //
-{
-    function appearItem() {
-        let list = document.querySelectorAll(".scroll-appear-item");
-        list.forEach((e) => {
-            if (e.getBoundingClientRect().y < (window.innerHeight - 75)) {
-                let index = Array.from(list).findIndex(elem => elem.innerHTML == e.innerHTML);
-                let siblingCount = 0;
-    
-                for (let i = index; i > 0; i--)
-                    if (list[i].getBoundingClientRect().y == e.getBoundingClientRect().y)
-                        siblingCount++;
-    
-                setTimeout(() => {
-                    e.style.transform = "translateY(0px)";
-                    e.style.opacity = "1";
-                }, siblingCount * 100);
-            }
-            else {
-                e.style.transform = "translateY(35px)";
-                e.style.opacity = "0";
-            }
+                galleryImg.setAttribute("current-image", nextImage);
+                galleryImg.setAttribute("src", galleryImgs[nextImage]);
+            }));
         });
-    } 
-    appearItem();
-}
-
-
-
-// --------------------------------------------------------------------------------------- //
-// Make Items with numbers wount upwards when Visible After Scroll Code - Scroll animation//
-// ------------------------------------------------------------------------------------- //
-{
-    function countItem() {
-        let list = document.querySelectorAll(".scroll-count-item");
-        list.forEach((e) => {
-            if (e.getBoundingClientRect().y < window.innerHeight && e.innerHTML < 1) {
-                console.log(e.getBoundingClientRect().y + " / " + window.innerHeight + " + " + e.innerHTML)
-                for (let i = 0; i < e.getAttribute("alt"); i++)
-                    setTimeout(() => e.innerHTML = e.innerHTML - 0 + 1, i * 10);
-            }
-            else if (e.getBoundingClientRect().y > window.innerHeight) e.innerHTML = 0;
-        });
-    } 
-    countItem();
-}
-
-
-
-// --------------------------------------------------------------------------------------- //
-// Read More Circle Home page Javascript Code - Scroll animation                          //
-// ------------------------------------------------------------------------------------- //
-{
-    for(let i = 0; i < 2; i++)
-        document.querySelectorAll("#home .readmore span").forEach((e) => { e.parentElement.append(e.cloneNode(e, true)); })
-    
-    for(let i = 0; i < document.querySelectorAll("#home .readmore span").length; i++)
-        document.querySelectorAll("#home .readmore span")[i].style.transform = `rotate(${i * 11 + window.scrollY / 3}deg)`;
-    
-    function readmoreRotate() {
-        for(let i = 0; i < document.querySelectorAll("#home .readmore span").length; i++)
-            document.querySelectorAll("#home .readmore span")[i].style.transform = `rotate(${i * 11 + window.scrollY / 3}deg)`;
     }
-}
-
-
-
-// --------------------------------------------------------------------------------------- //
-// Calling All Scroll Animations When Scrolling                                           //
-// ------------------------------------------------------------------------------------- //
-{
-    document.querySelector(".backTop").addEventListener("click", () => window.scrollTo(0, 0));
-
-    document.addEventListener("scroll", () => {
-        setTimeout(appearItem, 400);
-        appearItem();
-        countItem();
-    
-        readmoreRotate();
-
-        if (scrollY > 200)
-            document.querySelector(".backTop").style.transform = "translateX(0px)";
-        else
-            document.querySelector(".backTop").style.transform = "translateX(100px)";
-    });
 }
 
 
@@ -421,4 +295,127 @@ let page = window.location.href;
         // Bind "fill" property to "fill" key in data
         polygonTemplate.propertyFields.fill = "fill";
     }
+}
+
+
+// --------------------------------------------------------------------------------------- //
+// Import navbar and footer from files and create link hover effect                       //
+// ------------------------------------------------------------------------------------- //
+{
+    fetch('/src/navbar.html')
+      .then(response => { return response.text() })
+      .then(html => document.querySelectorAll("nav").forEach((e) => {
+        e.innerHTML = html;
+
+        fetch('/src/footer.html')
+          .then(response => { return response.text() })
+          .then(html => document.querySelectorAll("footer").forEach((e) => {
+            e.innerHTML = html;
+    
+            document.querySelectorAll("a:not(.btn1, .btn2, .readmore, .backTop, .some a)").forEach((e) => e.addEventListener("mouseleave", () => {
+                e.style.setProperty('--beforeLeft', 'initial');
+                e.addEventListener("transitionend", () => e.style.setProperty('--beforeLeft', '0'), { once: true })
+            }));
+
+            document.querySelectorAll("footer .some a").forEach((a) => a.addEventListener("mouseenter", (evt) => {
+                if (evt.layerX > a.offsetWidth / 2)
+                    a.style.transform = "scale(1.05) rotate(5deg)";
+                else
+                    a.style.transform = "scale(1.05) rotate(-5deg)";
+
+                a.addEventListener("mouseleave", () => a.style.transform = "scale(1) rotate(0deg)", { once: true })
+            }));
+        }));
+    }));
+}
+
+
+
+// --------------------------------------------------------------------------------------- //
+// Make Items Appear When Visible After Scroll Code - Scroll animation                    //
+// ------------------------------------------------------------------------------------- //
+{
+    function appearItem() {
+        let list = document.querySelectorAll(".scroll-appear-item");
+        list.forEach((e) => {
+            if (e.getBoundingClientRect().y < (window.innerHeight - 75)) {
+                let index = Array.from(list).findIndex(elem => elem.innerHTML == e.innerHTML);
+                let siblingCount = 0;
+    
+                for (let i = index; i > 0; i--)
+                    if (list[i].getBoundingClientRect().y == e.getBoundingClientRect().y)
+                        siblingCount++;
+    
+                setTimeout(() => {
+                    e.style.transform = "translateY(0px)";
+                    e.style.opacity = "1";
+                }, siblingCount * 100);
+            }
+            else {
+                e.style.transform = "translateY(35px)";
+                e.style.opacity = "0";
+            }
+        });
+    } 
+    appearItem();
+}
+
+
+
+// --------------------------------------------------------------------------------------- //
+// Make Items with numbers wount upwards when Visible After Scroll Code - Scroll animation//
+// ------------------------------------------------------------------------------------- //
+{
+    function countItem() {
+        let list = document.querySelectorAll(".scroll-count-item");
+        list.forEach((e) => {
+            if (e.getBoundingClientRect().y < window.innerHeight && e.innerHTML < 1) {
+                console.log(e.getBoundingClientRect().y + " / " + window.innerHeight + " + " + e.innerHTML)
+                for (let i = 0; i < e.getAttribute("alt"); i++)
+                    setTimeout(() => e.innerHTML = e.innerHTML - 0 + 1, i * 10);
+            }
+            else if (e.getBoundingClientRect().y > window.innerHeight) e.innerHTML = 0;
+        });
+    } 
+    countItem();
+}
+
+
+
+// --------------------------------------------------------------------------------------- //
+// Read More Circle Home page Javascript Code - Scroll animation                          //
+// ------------------------------------------------------------------------------------- //
+{
+    for(let i = 0; i < 2; i++)
+        document.querySelectorAll("#home .readmore span").forEach((e) => { e.parentElement.append(e.cloneNode(e, true)); })
+    
+    for(let i = 0; i < document.querySelectorAll("#home .readmore span").length; i++)
+        document.querySelectorAll("#home .readmore span")[i].style.transform = `rotate(${i * 11 + window.scrollY / 3}deg)`;
+    
+    function readmoreRotate() {
+        for(let i = 0; i < document.querySelectorAll("#home .readmore span").length; i++)
+            document.querySelectorAll("#home .readmore span")[i].style.transform = `rotate(${i * 11 + window.scrollY / 3}deg)`;
+    }
+}
+
+
+
+// --------------------------------------------------------------------------------------- //
+// Calling All Scroll Animations When Scrolling                                           //
+// ------------------------------------------------------------------------------------- //
+{
+    document.querySelector(".backTop").addEventListener("click", () => window.scrollTo(0, 0));
+
+    document.addEventListener("scroll", () => {
+        setTimeout(appearItem, 400);
+        appearItem();
+        countItem();
+    
+        readmoreRotate();
+
+        if (scrollY > 200)
+            document.querySelector(".backTop").style.transform = "translateX(0px)";
+        else
+            document.querySelector(".backTop").style.transform = "translateX(100px)";
+    });
 }
