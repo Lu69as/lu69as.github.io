@@ -159,12 +159,6 @@ let page = window.location.href;
 // ------------------------------------------------------------------------------------- //
 {
     if (window.location.href.includes("kontakt")) {
-        // document.querySelector("#contact form button.cancel").addEventListener("click", () => {
-        //     document.querySelectorAll("#contact form :is(input, textarea)").forEach((e) => {
-        //         e.value = "";
-        //     });
-        // });
-
         document.querySelectorAll(".reason > div").forEach((e) => {
             e.addEventListener("click", () => {
                 document.querySelectorAll(".reason > div").forEach((a) => a.classList.remove("active"));

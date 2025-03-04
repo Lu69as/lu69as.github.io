@@ -227,6 +227,24 @@ body {
             transform: translateY(-10%);
         }
     }
+
+    .lottieContainer {
+        width: 100%;
+        height: 310px;
+        position: relative;
+        pointer-events: none;
+
+        iframe {
+            position: absolute;
+            height: 100%;
+            aspect-ratio: 1;
+            border: none;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            box-shadow: none !important;
+        }
+    }
 }
 
 section {
@@ -532,6 +550,11 @@ nav {
         }
     }
 
+    .lottieContainer { 
+        height: 450px;
+        iframe { height: 135%; }
+    }
+
     img[src='/img/me-noBg.png'] {
         transform: rotateY(180deg);
         height: 550px;
@@ -549,6 +572,11 @@ nav {
         font-weight: 700;
         margin-bottom: -40px;
         margin-top: 60px;
+    }
+
+    .lottieContainer { 
+        height: 400px;
+        iframe { height: 135%; }
     }
 
     .tools, .languages {
@@ -1077,9 +1105,16 @@ nav {
         &::after { bottom: 0; }
     }
 
+    .lottieContainer { 
+        height: 285px;
+        iframe { 
+            height: 280%;
+            top: 64%;
+        }
+    }
+
     .contact-form {
         display: flex;
-        /* align-items: center; */
         gap: 70px;
 
         .text {
@@ -1121,23 +1156,6 @@ nav {
         
                         > div { background: var(--primary); }
                     }
-                }
-            }
-
-            .lottieContainer {
-                width: 100%;
-                height: 310px;
-                position: relative;
-                pointer-events: none;
-
-                iframe {
-                    position: absolute;
-                    width: 160%;
-                    aspect-ratio: 1;
-                    border: none;
-                    top: 50%;
-                    left: 50%;
-                    transform: translate(-50%, -44%);
                 }
             }
 
@@ -1275,7 +1293,6 @@ nav {
 
         }
         h2:nth-child(3) { margin-bottom: -30px; }
-
     }
 }
 @keyframes rotate-icon-contact {
