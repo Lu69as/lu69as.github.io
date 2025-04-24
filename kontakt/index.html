@@ -53,29 +53,13 @@
 
         <div class="container">
           <div class="map-globe">
-            <div class="position">
-              <div class="tabs-select">
-                <div class="map active">Min beliggenhet</div>
-                <div class="globe">Land jeg har vært i</div>
-              </div>
-              <div class="tabs">
-                <div class="map active">
-                  <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d16324.994719943146!2d10.98809860329432!3d59.23900737203986!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4644039d66d8fc29%3A0xdf435cb8c68d1ccf!2sSellebakk!5e0!3m2!1sen!2sno!4v1736943103223!5m2!1sen!2sno"
-                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade"></iframe>
-                </div>
-                <div class="globe">
-                  <div class="countries">
-                    <script src="https://www.amcharts.com/lib/4/core.js"></script>
-                    <script src="https://www.amcharts.com/lib/4/maps.js"></script>
-                    <script src="https://www.amcharts.com/lib/4/geodata/worldLow.js"></script>
-                    <script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
-                    <div id="chartdiv"></div>
-                    <img src="/img/logo.png" alt="Logo">
-                  </div>
-                </div>
-              </div>
+            <div class="globe">
+                <script src="https://www.amcharts.com/lib/4/core.js"></script>
+                <script src="https://www.amcharts.com/lib/4/maps.js"></script>
+                <script src="https://www.amcharts.com/lib/4/geodata/worldLow.js"></script>
+                <script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
+                <div id="chartdiv"></div>
+                <img src="/img/logo.png" alt="Logo">
             </div>
             <div class="text">
               <h2>Skreddersydde nettsider for ditt firma</h2>
@@ -89,6 +73,7 @@
           </div>
   
           <div class="contact-info">
+            <img src="/img/alternate-gradient.svg">
             <div>
               <a href="mailto:post@lukasokken.com">
                 <div><img src="/img/svg-icons/envelope-solid.svg" alt="Mail"></div>
@@ -138,8 +123,8 @@
                 <div class="gdpr">
                   <p>Jeg er forpliktet til å beskytte og respektere personvernet ditt, og jeg bruker bare din personlige informasjon til å levere produktene og tjenestene du ber om fra meg. </p>
                   <div class="check">
-                    <div class="customGdpr"></div>
-                    <input type="checkbox" name="gdpr agreement" id="gdpr" required="yes">
+                    <div class="customGdpr" onclick="gdpr.click()"></div>
+                    <input type="checkbox" name="gdpr agreement" id="gdpr" required="yes" style="cursor: pointer;">
                     <label for="gdpr">Jeg godtar lagring og behandling av mine personopplysninger.</label>
                   </div>
                 </div>

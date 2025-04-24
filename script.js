@@ -158,22 +158,7 @@ let page = window.location.href;
 // Contact buttons and Globe code from amcharts                                           //
 // ------------------------------------------------------------------------------------- //
 {
-    if (window.location.href.includes("kontakt")) {
-        document.querySelectorAll(".reason > div").forEach((e) => {
-            e.addEventListener("click", () => {
-                document.querySelectorAll(".reason > div").forEach((a) => a.classList.remove("active"));
-                e.classList.add("active");
-                document.querySelector(".window form .hidden-field-emne").value
-                    = e.firstElementChild.lastElementChild.innerHTML;
-            });
-        });
-
-
-        document.querySelectorAll(".map-globe .tabs-select > div").forEach((e) => e.addEventListener("click", () => {
-            document.querySelectorAll(".map-globe .position .active").forEach((t) => t.classList.remove("active"));
-            document.querySelectorAll(".map-globe .position ." + e.classList[0]).forEach((t) => t.classList.add("active"));
-        }))
-    
+    if (window.location.href.includes("kontakt")) {    
         /**
          * ---------------------------------------
          * This demo was created using amCharts 4.
@@ -218,7 +203,7 @@ let page = window.location.href;
     
         var graticuleSeries = chart.series.push(new am4maps.GraticuleSeries());
         graticuleSeries.mapLines.template.line.stroke = am4core.color("#222");
-        graticuleSeries.mapLines.template.line.strokeOpacity = 0.1;
+        graticuleSeries.mapLines.template.line.strokeOpacity = .08;
         graticuleSeries.fitExtent = false;
     
         let animation;
@@ -413,5 +398,9 @@ let page = window.location.href;
             document.querySelector(".backTop").style.transform = "translateX(0px)";
         else
             document.querySelector(".backTop").style.transform = "translateX(100px)";
+
+        let navbar = document.querySelector("nav");
+        if (navbar.getBoundingClientRect().top == 10) navbar.classList.add("sticked");
+        else navbar.classList.remove("sticked");
     });
 }
