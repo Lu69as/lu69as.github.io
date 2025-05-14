@@ -1223,7 +1223,7 @@ nav {
                     .sendbtn { 
                         z-index: +1;
                         left: 0; top: 0;
-                        cursor: no-drop;
+                        transition: 200ms;
                     }
                     .sendbtn::after {
                         content: " ";
@@ -1232,13 +1232,11 @@ nav {
                         position: absolute;
                         left: -10px;
                         top: -10px;
-                        cursor: default;
-                        z-index: -1;
+                        cursor: no-drop;
                     }
                     .sendbtn.locked {
                         left: 0 !important;
                         top: 0 !important;
-                        cursor: pointer;
                     }
                     .sendbtn.locked::after { content: none; }
 
