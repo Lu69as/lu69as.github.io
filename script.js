@@ -159,7 +159,7 @@ let page = window.location.href;
 {
     if (window.location.href.includes("kontakt")) {
         /* Code for the Send button in form that doesnt want to be sent */
-        function randomDistance() { return Math.random() * (30 - 10) + 10 }
+        function randomDistance() { return Math.floor(Math.random() * (30 - 10) + 10) + 1 }
 
         document.querySelector(".sendbtn").addEventListener("mousemove", (evt) => {
             let pastX = evt.target.style.left.replace("px", "") - 0;
