@@ -1219,8 +1219,38 @@ nav {
                     margin-top: 20px;
                     display: flex;
                     gap: 10px;
+
+                    .sendbtn { 
+                        z-index: +1;
+                        left: 0; top: 0;
+                        cursor: no-drop;
+                    }
+                    .sendbtn::after {
+                        content: " ";
+                        width: calc(100% + 20px);
+                        height: calc(100% + 20px);
+                        position: absolute;
+                        left: -10px;
+                        top: -10px;
+                        cursor: default;
+                        z-index: -1;
+                    }
+                    .sendbtn.locked {
+                        left: 0 !important;
+                        top: 0 !important;
+                        cursor: pointer;
+                    }
+                    .sendbtn.locked::after { content: none; }
+
+                    .fakebtn {
+                        transform: translateX(calc(-100% - 10px));
+                        padding-inline: 27px;
+                        background: transparent;
+                        border: dashed 3px #ffae00;
+                        color: #ffae00 !important;
+                        pointer-events: none;
+                    }
                 }
-    
             }
         }
     }
@@ -1266,6 +1296,13 @@ nav {
         flex-direction: column;
         .desc { width: calc(100% - 70px) !important; }
     }
+
+    .sendbtn {
+        left: 0 !important;
+        top: 0 !important;
+        cursor: pointer !important;
+    }
+    .sendbtn::after { content: none !important; }
 
     .map-globe, .contact-form {
         flex-direction: column;

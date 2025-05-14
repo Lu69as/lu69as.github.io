@@ -158,7 +158,37 @@ let page = window.location.href;
 // Contact buttons and Globe code from amcharts                                           //
 // ------------------------------------------------------------------------------------- //
 {
-    if (window.location.href.includes("kontakt")) {    
+    if (window.location.href.includes("kontakt")) {
+        /* Code for the Send button in form that doesnt want to be sent */
+        function randomDistance() { return Math.random() * (30 - 10) + 10 }
+
+        document.querySelector(".sendbtn").addEventListener("mousemove", (evt) => {
+            let pastX = evt.target.style.left.replace("px", "") - 0;
+            let x = Math.floor(evt.x - evt.target.getBoundingClientRect().x);
+            x = x <= evt.target.offsetWidth / 2 ? pastX + randomDistance() : pastX - randomDistance();
+            
+            let pastY = evt.target.style.top.replace("px", "") - 0;
+            let y = Math.floor(evt.y - evt.target.getBoundingClientRect().y);
+            y = y <= evt.target.offsetHeight / 2 ? pastY + randomDistance() : pastY - randomDistance();
+            
+            evt.target.setAttribute("style", `left:${x}px;top:${y}px`);
+        })
+
+        document.querySelectorAll("form :is(input, textarea)").forEach((e) => {
+            e.addEventListener("input", () => {
+                let btn = document.querySelector(".sendbtn");
+                if (document.querySelectorAll("form :is(input, textarea):invalid").length < 1) {
+                    btn.classList.add("locked");
+                    btn.setAttribute("style", `left:0;top:0`);
+                }
+                else
+                    btn.classList.remove("locked");
+            })
+        })
+
+
+
+
         /**
          * ---------------------------------------
          * This demo was created using amCharts 4.
