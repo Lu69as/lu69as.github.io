@@ -68,7 +68,7 @@ let page = window.location.href;
                     gridItem.addEventListener("click", () => {
                         let portfolioDesc = document.querySelector(".portfolioDesc");
 
-                        if (portfolioDesc.getBoundingClientRect().bottom < 0)
+                        if (portfolioDesc.getBoundingClientRect().bottom < 150)
                             portfolioDesc.scrollIntoView();
     
                         portfolioDesc.querySelector("img").style.transform = "translateX(-35px) rotateY(15deg)";
@@ -121,72 +121,32 @@ let page = window.location.href;
 }
 
 
-
-// --------------------------------------------------------------------------------------- //
-// JS for news page                                                                       //
-// ------------------------------------------------------------------------------------- //
-{
-    if (page.includes("aktuelt")) {
-        document.querySelectorAll(".container > article").forEach((e) => {
-            e.querySelector(".img").addEventListener("click", () => e.querySelector(".gallery").classList.add("visible") );
-            e.querySelector(".img").style.height = e.offsetHeight + "px";
-
-            e.querySelector(".gallery").addEventListener("click", (evt) => { 
-                if (evt.target.classList[0] == "gallery") 
-                    e.querySelector(".gallery").classList.remove("visible") 
-            });
-
-            let galleryImg = e.querySelector(".gallery img");
-            let galleryImgs = galleryImg.getAttribute("images").split(", ");
-            galleryImg.setAttribute("src", galleryImgs[galleryImg.getAttribute("current-image")]);
-
-            galleryImg.parentElement.querySelectorAll("div").forEach((d) => d.addEventListener("click", () => {
-                let nextImage = galleryImg.getAttribute("current-image");
-                if (d.classList[0] == "next") nextImage = nextImage >= galleryImgs.length - 1 ? 0 : nextImage-0 + 1;
-                else nextImage = nextImage <= 0 ? galleryImgs.length - 1 : nextImage - 1;
-
-                galleryImg.setAttribute("current-image", nextImage);
-                galleryImg.setAttribute("src", galleryImgs[nextImage]);
-            }));
-        });
-    }
-}
-
-
 // --------------------------------------------------------------------------------------- //
 // Contact buttons and Globe code from amcharts                                           //
 // ------------------------------------------------------------------------------------- //
 {
     if (window.location.href.includes("kontakt")) {
-        /* Code for the Send button in form that doesnt want to be sent */
-        function randomDistance() { return Math.floor(Math.random() * (30 - 10) + 10) + 1 }
+        let posArr = ["150,60", "-70,-110", "180,-70", "-120,150", "150,80", "280,-200", "-350,120", "-280,-200"];
+        let btn = document.querySelector(".sendbtn");
 
-        document.querySelector(".sendbtn").addEventListener("mousemove", (evt) => {
-            let pastX = evt.target.style.left.replace("px", "") - 0;
-            let x = Math.floor(evt.x - evt.target.getBoundingClientRect().x);
-            x = x <= evt.target.offsetWidth / 2 ? pastX + randomDistance() : pastX - randomDistance();
+        btn.addEventListener("mouseenter", (evt) => {
+            let pos = btn.getAttribute("position") - 0;
+            btn.setAttribute("position", pos >= posArr.length - 1 ? 0 : pos + 1);
             
-            let pastY = evt.target.style.top.replace("px", "") - 0;
-            let y = Math.floor(evt.y - evt.target.getBoundingClientRect().y);
-            y = y <= evt.target.offsetHeight / 2 ? pastY + randomDistance() : pastY - randomDistance();
-            
-            evt.target.setAttribute("style", `left:${x}px;top:${y}px`);
-        })
+            btn.style.left = posArr[pos].split(",")[0] + "px";
+            btn.style.top = posArr[pos].split(",")[1] + "px";
+        });
 
         document.querySelectorAll("form :is(input, textarea)").forEach((e) => {
             e.addEventListener("input", () => {
-                let btn = document.querySelector(".sendbtn");
                 if (document.querySelectorAll("form :is(input, textarea):invalid").length < 1) {
                     btn.classList.add("locked");
-                    btn.setAttribute("style", `left:0;top:0`);
+                    btn.removeAttribute("style");
+                    btn.removeAttribute("position");
                 }
-                else
-                    btn.classList.remove("locked");
+                else btn.classList.remove("locked");
             })
         })
-
-
-
 
         /**
          * ---------------------------------------
@@ -202,7 +162,6 @@ let page = window.location.href;
     
         // Themes begin
         am4core.useTheme(am4themes_animated);
-        // Themes end
     
         var chart = am4core.create("chartdiv", am4maps.MapChart);
     

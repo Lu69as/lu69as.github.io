@@ -58,6 +58,13 @@
             "tools": "Bannerwise, Photoshop",
             "link": "https://client.bannerwise.io/#/share/66f3c1c1b77f5bb651dc80f7",
             "description": "<br>Dette var et av mine første prosjekter med Bannerwise, hvor jeg designet en digital reklamekampanje for en fotballkamp mellom Fredrikstad Fotballklubb og Lillestrøm Sportsklubb. <br><br> Målet var å lage engasjerende bannere for å promotere kampen og bidra til at FFK satte ny publikumsrekord. Jeg brukte Photoshop til design og Bannerwise for å optimalisere og animere innholdet. <br><br> Gjennom prosjektet utviklet jeg ferdigheter innen digital markedsføring, visuell kommunikasjon og bannerdesign, noe som ga meg verdifull erfaring med effektive annonser for sportsarrangementer."
+        },
+        {
+            "relevant": true,
+            "image": "/img/portfolio/ffas.jpg",
+            "tools": "WordPress, PHP",
+            "link": "https://ffas.no/",
+            "description": "<br>På denne siden hadde jeg det vanlige ansvaret for både design og teknisk struktur, men fikk også et ekstra oppdrag: å utvikle et system for at kunden enkelt kunne varsle besøkende dersom varmesystemet deres var nede. Løsningen måtte være både rask å bruke og lett å forstå for noen uten teknisk bakgrunn.<br><br>Jeg lagde et enkelt system i PHP som henter tekst fra et tilpasset felt i WordPress. Når kunden skriver inn en melding der, vises den automatisk som en tydelig beskjed i toppen av nettsiden. I tillegg laget jeg en opplæringsguide for kunden, med fokus på at selv de uten teknisk erfaring raskt skulle kunne oppdatere beskjeden ved behov. Resultatet ble en pålitelig og effektiv varslingsløsning kunden selv kan håndtere."
         }
     ],
     "resume": {
