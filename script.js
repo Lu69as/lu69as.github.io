@@ -299,7 +299,6 @@ let page = window.location.href;
 }
 
 
-
 // --------------------------------------------------------------------------------------- //
 // Make Items Appear When Visible After Scroll Code - Scroll animation                    //
 // ------------------------------------------------------------------------------------- //
@@ -330,7 +329,6 @@ let page = window.location.href;
 }
 
 
-
 // --------------------------------------------------------------------------------------- //
 // Make Items with numbers wount upwards when Visible After Scroll Code - Scroll animation//
 // ------------------------------------------------------------------------------------- //
@@ -350,7 +348,6 @@ let page = window.location.href;
 }
 
 
-
 // --------------------------------------------------------------------------------------- //
 // Read More Circle Home page Javascript Code - Scroll animation                          //
 // ------------------------------------------------------------------------------------- //
@@ -366,7 +363,6 @@ let page = window.location.href;
             document.querySelectorAll("#home .readmore span")[i].style.transform = `rotate(${i * 11 + window.scrollY / 3}deg)`;
     }
 }
-
 
 
 // --------------------------------------------------------------------------------------- //
@@ -391,4 +387,48 @@ let page = window.location.href;
         if (navbar.getBoundingClientRect().top == 10) navbar.classList.add("sticked");
         else navbar.classList.remove("sticked");
     });
+}
+
+
+// --------------------------------------------------------------------------------------- //
+// Carousel function for the home page                                                    //
+// ------------------------------------------------------------------------------------- //
+{
+    document.querySelectorAll(".image_carousel").forEach((e) => {
+        let numberOfImgs = 5;
+        for (let i = 1; i <= numberOfImgs; i++) {
+            let img = document.createElement("div");
+            img.style.backgroundImage = "url(" + e.getAttribute("src") + i + ".jpg";
+
+            let radio = document.createElement("div");
+            radio.addEventListener("click", () => {
+                let current = document.querySelector(".image_carousel > .active");
+                if (img != current && !e.classList.contains("transitioning")) {
+                    let currentBefore = current.style.backgroundImage.split("/")[3].charAt(0) < i;
+                    img.style.left = currentBefore ? "100%" : "-100%";
+                    
+                    document.querySelector(".radio_selector .active").classList.remove("active");
+                    radio.classList.add("active");
+                    setTimeout(() => {
+                        e.classList.add("transitioning");
+                        current.style.left = currentBefore ? "-100%" : "100%";
+                        img.style.left = "0%";
+                        current.addEventListener("transitionend", () => e.classList.remove("transitioning"), { once: true })
+    
+                        current.classList.remove("active");
+                        img.classList.add("active");
+                    }, 20);
+                }
+            })
+
+            if (i == 1) {
+                radio.classList.add("active");
+                img.classList.add("active");
+                img.style.left = "0%";
+            }
+
+            e.append(img);
+            e.firstElementChild.append(radio);
+        }
+    })
 }

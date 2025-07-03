@@ -571,6 +571,70 @@ nav {
         height: 550px;
         width: auto;
     }
+
+    .image_carousel {
+        display: block;
+        position: relative;
+        height: 500px;
+        overflow: hidden;
+        box-shadow: 0 0 0 1px, 6px 6px;
+
+        .radio_selector {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            position: absolute;
+            width: 100%;
+            bottom: 10px;
+            opacity: 0;
+            z-index: +1;
+
+            div {
+                --clr: var(--primary);
+                position: relative;
+                height: 20px;
+                aspect-ratio: 1;
+                border: solid 2px var(--clr);
+                cursor: pointer;
+            }
+            div::before {
+                content: " ";
+                width: 0%;
+                aspect-ratio: 1;
+                position: absolute;
+                left: 50%; top: 50%;
+                transform: translate(-50%, -50%);
+                background: var(--clr);
+                border-radius: 9em;
+                transition: 400ms;
+            }
+            .active::before { width: 60%; }
+        }
+
+        > div:not(.radio_selector) {
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            left: 100%;
+            transition: 0ms;
+
+            border-radius: 0;
+            background-size: cover;
+            background-position: center;
+        }
+    }
+    .image_carousel::before {
+        content: " ";
+        position: absolute;
+        z-index: +1;
+        height: 30%;
+        width: 100%;
+        bottom: 0;
+        pointer-events: none;
+        background: linear-gradient(to bottom, transparent, #0008);
+    }
+    .image_carousel:hover .radio_selector { bottom: 30px; opacity: 1; }
+    .image_carousel.transitioning > div:not(.radio_selector) { transition: 400ms; }
 }
 
 @keyframes gradientMove { 
