@@ -258,6 +258,21 @@ let page = window.location.href;
             }, {
                 "id": "LT",
                 "fill": am4core.color(color)
+            }, {
+                "id": "PL",
+                "fill": am4core.color(color)
+            }, {
+                "id": "CZ",
+                "fill": am4core.color(color)
+            }, {
+                "id": "SK",
+                "fill": am4core.color(color)
+            }, {
+                "id": "HU",
+                "fill": am4core.color(color)
+            }, {
+                "id": "AT",
+                "fill": am4core.color(color)
             }
         ];
     
