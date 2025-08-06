@@ -974,6 +974,7 @@ nav {
             position: absolute;
             border-radius: 0;
             opacity: .3;
+            width: 100vw;
         }
 
         > div {
