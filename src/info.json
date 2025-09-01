@@ -33,13 +33,6 @@
     "portfolio": [
         {
             "relevant": false,
-            "image": "/img/portfolio/blob.jpg",
-            "tools": "PHP, MySQL",
-            "link": "https://github.com/Lu69as/twitter-remake",
-            "description": "<br>Dette er et prosjekt jeg har hat lyst til å gjøre en stund. Å lage en egen SoMe applikasjon. Det er enda en work in progress, men det har vert veldig gøy å prøve å lage en hel app fra bunnen av. <br><br>Planen er at den skal være en litt mer barebones versjon av Twitter, men også legge til 'Blobs', et slags reddit system hvor alle posts er i en - fem blobs som poster velger. Også kan man velge hvilke blobs man følger og ser posts fra de på feeden."
-        },
-        {
-            "relevant": false,
             "image": "/img/portfolio/voting-site.jpg",
             "tools": "ASP.net C#, MySQL",
             "link": "https://github.com/lu69as/voting-site",
@@ -72,6 +65,13 @@
             "tools": "WordPress, PHP",
             "link": "https://ffas.no/",
             "description": "<br>På denne siden hadde jeg det vanlige ansvaret for både design og teknisk struktur, men fikk også et ekstra oppdrag: å utvikle et system for at kunden enkelt kunne varsle besøkende dersom varmesystemet deres var nede. Løsningen måtte være både rask å bruke og lett å forstå for noen uten teknisk bakgrunn.<br><br>Jeg lagde et enkelt system i PHP som henter tekst fra et tilpasset felt i WordPress. Når kunden skriver inn en melding der, vises den automatisk som en tydelig beskjed i toppen av nettsiden. I tillegg laget jeg en opplæringsguide for kunden, med fokus på at selv de uten teknisk erfaring raskt skulle kunne oppdatere beskjeden ved behov. Resultatet ble en pålitelig og effektiv varslingsløsning kunden selv kan håndtere."
+        },
+        {
+            "relevant": false,
+            "image": "/img/portfolio/blob.jpg",
+            "tools": "PHP, MySQL",
+            "link": "https://github.com/Lu69as/twitter-remake",
+            "description": "<br>Dette er et prosjekt jeg har hat lyst til å gjøre en stund. Å lage en egen SoMe applikasjon. Det er enda en work in progress, men det har vert veldig gøy å prøve å lage en hel app fra bunnen av. <br><br>Planen er at den skal være en litt mer barebones versjon av Twitter, men også legge til 'Blobs', et slags reddit system hvor alle posts er i en - fem blobs som poster velger. Også kan man velge hvilke blobs man følger og ser posts fra de på feeden."
         }
     ],
     "resume": {
