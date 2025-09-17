@@ -86,55 +86,56 @@
             {
                 "icon": "wp",
                 "name": "WordPress",
-                "skill": 91
+                "skill": 96
             },
             {
                 "icon": "photoshop",
                 "name": "Photoshop",
-                "skill": 86
+                "skill": 92
             },
             {
                 "icon": "premiere",
                 "name": "Premiere Pro",
-                "skill": 82
+                "skill": 86
             }
         ],
         "languages": [
             {
                 "icon": "css",
                 "name": "CSS",
-                "skill": 94
+                "skill": 95
             },
             {
                 "icon": "js",
                 "name": "Javascript",
-                "skill": 87
-            },
-            {
-                "icon": "csharp",
-                "name": "C#",
-                "skill": 67
-            },
-            {
-                "icon": "mysql",
-                "name": "MySQL",
-                "skill": 73
+                "skill": 90
             },
             {
                 "icon": "php",
                 "name": "PHP",
-                "skill": 59
+                "skill": 85
+            },
+            {
+                "icon": "mysql",
+                "name": "MySQL",
+                "skill": 82
+            },
+            {
+                "icon": "csharp",
+                "name": "C#",
+                "skill": 64
             }
         ],
         "extra": [
             "Notion",
             "Cloudflare",
             "React JS",
+            "SCSS",
+            "Java",
             "Illustrator",
             "Freshdesk",
-            "Search console",
-            "SCSS",
-            "Java"
+            "Google Analytics",
+            "Google Seach Console"
         ]
     }
 }
