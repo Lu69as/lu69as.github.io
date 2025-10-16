@@ -79,7 +79,7 @@
             "tools": "ASP.net C#, MySQL",
             "link": "https://github.com/lu69as/voting-site",
             "description": "<br>Dette prosjektet startet som en skoleoppgave, men utviklet seg raskt til et lidenskapsprosjekt hvor jeg ønsket å utforske og forbedre ulike aspekter av webutvikling. <br><br>Nettsiden er en stemmeplattform med en rekke funksjoner som forbedrer både brukeropplevelsen og ytelsen. Jeg har implementert optimalisert databasehåndtering, sikker stemmegivning og et moderne, responsivt design. Gjennom dette prosjektet har jeg opparbeidet meg dypere forståelse for ASP.NET, C# og MySQL, samt hvordan man bygger effektive og skalerbare webapplikasjoner."
-        },
+        }
         
     ],
     "resume": {
