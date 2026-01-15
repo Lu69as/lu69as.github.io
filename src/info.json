@@ -1,11 +1,11 @@
 {
     "media": {
         "game": {
-            "name": "Skyrim VR",
-            "playtime": "327",
-            "iframe": "<iframe width='800' height='354' src='https://www.youtube.com/embed/fg_vqd8zAhw?si=p5dJA2HPiuGD-iw8?controls=0&showinfo=0&rel=0&wmode=transparent' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' referrerpolicy='strict-origin-when-cross-origin' allowfullscreen></iframe>",
-            "description": "Et ekte, full-lengde åpen verden-spill for VR har kommet fra Bethesda Game Studios. Skyrim VR reimaginerer det komplette episke fantasy-mesterverket med en uovertruffen følelse av skala, dybde og fordypning. Skyrim VR inkluderer også alle offisielle tillegg.",
-            "link": "https://store.steampowered.com/app/611670/The_Elder_Scrolls_V_Skyrim_VR/"
+            "name": "Satisfactory",
+            "playtime": "286",
+            "iframe": "<iframe width='800' height='354' src='https://www.youtube.com/embed/Jt4XOPiPJHs?si=k9H5TXgGMWhOJHhL?controls=0&showinfo=0&rel=0&wmode=transparent' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' referrerpolicy='strict-origin-when-cross-origin' allowfullscreen></iframe>",
+            "description": "Satisfactory er et førstepersonsspill med åpen verden og en dose utforskning og kamp. Spill alene eller med venner, utforsk en fremmed planet, lag fabrikker i flere etasjer og bli en del av transportbåndshimmelen!",
+            "link": "https://store.steampowered.com/app/526870/Satisfactory/"
         },
         "series": {
             "name": "Arcane",
@@ -14,57 +14,29 @@
             "description": "En 'anime' om et land som er splittet mellom undergrunnen og eliten. Alt med denne serien er rett og slett utrolig, musikken er fantastisk og noen er permanente deler av spillelisten. Karakterene og hele verden er skrevet så bra at når de kraftige scenene kommer treffer de hardere en jeg har følt med noen andre serier.",
             "link": "https://www.netflix.com/no-en/title/81435684"
         },
-        "song": "<iframe style='border-radius:12px' src='https://open.spotify.com/embed/track/2I2AqFb0f9UNnolWc2MafC?utm_source=generator' width='100%' height='232' frameBorder='0' allowfullscreen='' allow='autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture' loading='lazy'></iframe>",
+        "song": "<iframe style='border-radius:12px' src='https://open.spotify.com/embed/track/68EkhVWIeULhHxcbi1QhzK?utm_source=generator' width='100%' height='232' frameBorder='0' allowfullscreen='' allow='autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture' loading='lazy'></iframe>",
         "movie": {
-            "name": "Joker",
-            "rating": "IMDB: 8.4 / 10",
-            "iframe": "<iframe width='800' height='354' src='https://www.youtube.com/embed/t433PEQGErc?si=9WIVpbhoAlm6yp3S?controls=0&showinfo=0&rel=0&wmode=transparent' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' referrerpolicy='strict-origin-when-cross-origin' allowfullscreen></iframe>",
-            "description": "Arthur Fleck, en festklovn og en mislykket standup-komiker, lever et fattig liv med sin syke mor. Men når samfunnet skyr ham og stempler ham som en freak, bestemmer han seg for å omfavne livet med kaos i Gotham City.",
-            "link": "https://www.netflix.com/no-en/title/81092221"
+            "name": "The Social Network",
+            "rating": "IMDB: 7.8 / 10",
+            "iframe": "<iframe width='800' height='354' src='https://www.youtube.com/embed/lB95KLmpLR4?si=gAMoGg58HJADog0Q?controls=0&showinfo=0&rel=0&wmode=transparent' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' referrerpolicy='strict-origin-when-cross-origin' allowfullscreen></iframe>",
+            "description": "Mens Harvard-studenten Mark Zuckerberg oppretter det sosiale nettverket som senere ble kjent som Facebook, blir han saksøkt av tvillingene som hevder at han stjal ideen deres, og av medgründeren som senere ble presset ut av virksomheten.",
+            "link": "https://www.imdb.com/title/tt1285016/?ref_=nv_sr_srsg_0_tt_8_nm_0_in_0_q_the%2520social%2520ne"
         },
         "sport": {
             "name": "Formel 1",
             "driver": "Lando Norris og Kimi Antonelli",
             "iframe": "<iframe width='800' height='354' src='https://www.youtube.com/embed/wtJPe1ksS6E?si=QKaWHHRQCKe3ufmG?controls=0&showinfo=0&rel=0&wmode=transparent' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' referrerpolicy='strict-origin-when-cross-origin' allowfullscreen></iframe>",
-            "description": "Formel 1 er toppen motorsport og har 20 av de beste sjåførene i verden. Jeg heier på Lando Norris, som jeg håper kan slå lagkameraten og vinne 2025 mesterskapet. Og Kimi Antonelli, en kjempeung gutt, skutt opp i Mercedes som ligger nær toppen av sporten og han viser stort potensiale.",
+            "description": "Formel 1 er toppen motorsport og har 20 av de beste sjåførene i verden. Jeg heier på Lando Norris, som jeg håper kan slå lagkameraten og vinne 2025 mesterskapet. Og Kimi Antonelli, en gutt pås samme alder som meg selv, skutt opp i Mercedes som ligger nær toppen av sporten og han viser stort potensiale.",
             "link": "https://www.formula1.com"
         }
     },
     "portfolio": [
         {
-            "relevant": false,
-            "image": "/img/portfolio/voting-site.jpg",
-            "tools": "ASP.net C#, MySQL",
-            "link": "https://github.com/lu69as/voting-site",
-            "description": "<br>Dette prosjektet startet som en skoleoppgave, men utviklet seg raskt til et lidenskapsprosjekt hvor jeg ønsket å utforske og forbedre ulike aspekter av webutvikling. <br><br>Nettsiden er en stemmeplattform med en rekke funksjoner som forbedrer både brukeropplevelsen og ytelsen. Jeg har implementert optimalisert databasehåndtering, sikker stemmegivning og et moderne, responsivt design. Gjennom dette prosjektet har jeg opparbeidet meg dypere forståelse for ASP.NET, C# og MySQL, samt hvordan man bygger effektive og skalerbare webapplikasjoner."
-        },
-        {
-            "relevant": false,
-            "image": "/img/portfolio/react-site.jpg",
-            "tools": "React JS, SCSS",
-            "link": "https://github.com/lu69as/website-v2",
-            "description": "<br>Dette er en personlig nettside jeg utviklet for å lære meg React-rammeverket og forbedre ferdighetene mine innen moderne JavaScript-utvikling. <br><br>Gjennom prosjektet lærte jeg hvordan komponentbaserte strukturer fungerer, samt hvordan man håndterer state management og optimalisering av ytelse i en React-applikasjon. Siden har et stilrent design bygget med SCSS og er fullt responsiv for både mobil og desktop. Erfaringene fra dette prosjektet har gitt meg et solid grunnlag for fremtidige oppgaver som krever bruk av JavaScript-rammeverk."
-        },
-        {
             "relevant": true,
-            "image": "/img/portfolio/komfort-solskjerming.jpg",
-            "tools": "WordPress, MySQL",
-            "link": "https://komfortsolskjerming.no/",
-            "description": "<br>Dette var mitt første komplette nettsideprosjekt hos Relevant, hvor jeg hadde en sentral rolle i hele prosessen – fra planlegging og design til utvikling og lansering. <br><br>Målet var å skape en brukervennlig, estetisk tiltalende og rask nettside for Komfort Solskjerming. Jeg arbeidet med WordPress for å sikre enkel administrasjon for kunden, optimaliserte databasen for raskere lastetider og implementerte SEO-vennlige løsninger for bedre synlighet i søkemotorer. <br><br>Lanseringen av denne nettsiden ga meg verdifull innsikt i ytelsesoptimalisering, brukervennlighet og hvordan man tilrettelegger en nettside for et stort antall besøkende. Kunden var svært fornøyd med sluttresultatet, og jeg er stolt av hvordan prosjektet ble gjennomført."
-        },
-        {
-            "relevant": true,
-            "image": "/img/portfolio/FFK-Banner.jpg",
-            "tools": "Bannerwise, Photoshop",
-            "link": "https://client.bannerwise.io/#/share/66f3c1c1b77f5bb651dc80f7",
-            "description": "<br>Dette var et av mine første prosjekter med Bannerwise, hvor jeg designet en digital reklamekampanje for en fotballkamp mellom Fredrikstad Fotballklubb og Lillestrøm Sportsklubb. <br><br> Målet var å lage engasjerende bannere for å promotere kampen og bidra til at FFK satte ny publikumsrekord. Jeg brukte Photoshop til design og Bannerwise for å optimalisere og animere innholdet. <br><br> Gjennom prosjektet utviklet jeg ferdigheter innen digital markedsføring, visuell kommunikasjon og bannerdesign, noe som ga meg verdifull erfaring med effektive annonser for sportsarrangementer."
-        },
-        {
-            "relevant": true,
-            "image": "/img/portfolio/ffas.jpg",
-            "tools": "WordPress, PHP",
-            "link": "https://ffas.no/",
-            "description": "<br>På denne siden hadde jeg det vanlige ansvaret for både design og teknisk struktur, men fikk også et ekstra oppdrag: å utvikle et system for at kunden enkelt kunne varsle besøkende dersom varmesystemet deres var nede. Løsningen måtte være både rask å bruke og lett å forstå for noen uten teknisk bakgrunn.<br><br>Jeg lagde et enkelt system i PHP som henter tekst fra et tilpasset felt i WordPress. Når kunden skriver inn en melding der, vises den automatisk som en tydelig beskjed i toppen av nettsiden. I tillegg laget jeg en opplæringsguide for kunden, med fokus på at selv de uten teknisk erfaring raskt skulle kunne oppdatere beskjeden ved behov. Resultatet ble en pålitelig og effektiv varslingsløsning kunden selv kan håndtere."
+            "image": "/img/portfolio/chatbot.jpg",
+            "tools": "OpenAI Dev, PHP",
+            "link": "https://stallkubberod.no/chatbot-testing",
+            "description": "<br>Et prosjekt jeg fikk tildelt av jobben til å gjøre på siden. Målet er å lage en chatbot plugin vi kan selge til kunder og å ta Stall Kubberød sin side som utgangspunkt. <br><br>Det startet simpelt ved å kopiere kode fra nettet å sakte forstå OpenAI sitt system, men etter hvert skjønte jeg at det ikke var mulig å mate all info fra siden da det er mange produkter og mange FAQ spørsmål som jeg har lagret i en enkel json fil. Så jeg lærte meg å sette opp OpenAI sin Embedding funskjon hvor den lager en spesiell kode og kan kalkulere hvilke produkter, faq spørsmål, etc.. er best å gi til AI'en med tanke på spørsmålet."
         },
         {
             "relevant": false,
@@ -75,66 +47,96 @@
         },
         {
             "relevant": true,
-            "image": "/img/portfolio/chatbot.jpg",
-            "tools": "OpenAI Dev, PHP",
-            "link": "https://stallkubberod.no/chatbot-testing",
-            "description": "<br>Et prosjekt jeg fikk tildelt av jobben til å gjøre på siden. Målet er å lage en chatbot plugin vi kan selge til kunder og å ta Stall Kubberød sin side som utgangspunkt. <br><br>Det startet simpelt ved å kopiere kode fra nettet å sakte forstå OpenAI sitt system, men etter hvert skjønte jeg at det ikke var mulig å mate all info fra siden da det er mange produkter og mange FAQ spørsmål som jeg har lagret i en enkel json fil. Så jeg lærte meg å sette opp OpenAI sin Embedding funskjon hvor den lager en spesiell kode og kan kalkulere hvilke produkter, faq spørsmål, etc.. er best å gi til AI'en med tanke på spørsmålet."
+            "image": "/img/portfolio/ffas.jpg",
+            "tools": "WordPress, PHP",
+            "link": "https://ffas.no/",
+            "description": "<br>På denne siden hadde jeg det vanlige ansvaret for både design og teknisk struktur, men fikk også et ekstra oppdrag: å utvikle et system for at kunden enkelt kunne varsle besøkende dersom varmesystemet deres var nede. Løsningen måtte være både rask å bruke og lett å forstå for noen uten teknisk bakgrunn.<br><br>Jeg lagde et enkelt system i PHP som henter tekst fra et tilpasset felt i WordPress. Når kunden skriver inn en melding der, vises den automatisk som en tydelig beskjed i toppen av nettsiden. I tillegg laget jeg en opplæringsguide for kunden, med fokus på at selv de uten teknisk erfaring raskt skulle kunne oppdatere beskjeden ved behov. Resultatet ble en pålitelig og effektiv varslingsløsning kunden selv kan håndtere."
+        },
+        {
+            "relevant": true,
+            "image": "/img/portfolio/FFK-Banner.jpg",
+            "tools": "Bannerwise, Photoshop",
+            "link": "https://client.bannerwise.io/#/share/66f3c1c1b77f5bb651dc80f7",
+            "description": "<br>Dette var et av mine første prosjekter med Bannerwise, hvor jeg designet en digital reklamekampanje for en fotballkamp mellom Fredrikstad Fotballklubb og Lillestrøm Sportsklubb. <br><br> Målet var å lage engasjerende bannere for å promotere kampen og bidra til at FFK satte ny publikumsrekord. Jeg brukte Photoshop til design og Bannerwise for å optimalisere og animere innholdet. <br><br> Gjennom prosjektet utviklet jeg ferdigheter innen digital markedsføring, visuell kommunikasjon og bannerdesign, noe som ga meg verdifull erfaring med effektive annonser for sportsarrangementer."
+        },
+        {
+            "relevant": true,
+            "image": "/img/portfolio/komfort-solskjerming.jpg",
+            "tools": "WordPress, MySQL",
+            "link": "https://komfortsolskjerming.no/",
+            "description": "<br>Dette var mitt første komplette nettsideprosjekt hos Relevant, hvor jeg hadde en sentral rolle i hele prosessen – fra planlegging og design til utvikling og lansering. <br><br>Målet var å skape en brukervennlig, estetisk tiltalende og rask nettside for Komfort Solskjerming. Jeg arbeidet med WordPress for å sikre enkel administrasjon for kunden, optimaliserte databasen for raskere lastetider og implementerte SEO-vennlige løsninger for bedre synlighet i søkemotorer. <br><br>Lanseringen av denne nettsiden ga meg verdifull innsikt i ytelsesoptimalisering, brukervennlighet og hvordan man tilrettelegger en nettside for et stort antall besøkende. Kunden var svært fornøyd med sluttresultatet, og jeg er stolt av hvordan prosjektet ble gjennomført."
+        },
+        {
+            "relevant": false,
+            "image": "/img/portfolio/react-site.jpg",
+            "tools": "React JS, SCSS",
+            "link": "https://github.com/lu69as/website-v2",
+            "description": "<br>Dette er en personlig nettside jeg utviklet for å lære meg React-rammeverket og forbedre ferdighetene mine innen moderne JavaScript-utvikling. <br><br>Gjennom prosjektet lærte jeg hvordan komponentbaserte strukturer fungerer, samt hvordan man håndterer state management og optimalisering av ytelse i en React-applikasjon. Siden har et stilrent design bygget med SCSS og er fullt responsiv for både mobil og desktop. Erfaringene fra dette prosjektet har gitt meg et solid grunnlag for fremtidige oppgaver som krever bruk av JavaScript-rammeverk."
+        },
+        {
+            "relevant": false,
+            "image": "/img/portfolio/voting-site.jpg",
+            "tools": "ASP.net C#, MySQL",
+            "link": "https://github.com/lu69as/voting-site",
+            "description": "<br>Dette prosjektet startet som en skoleoppgave, men utviklet seg raskt til et lidenskapsprosjekt hvor jeg ønsket å utforske og forbedre ulike aspekter av webutvikling. <br><br>Nettsiden er en stemmeplattform med en rekke funksjoner som forbedrer både brukeropplevelsen og ytelsen. Jeg har implementert optimalisert databasehåndtering, sikker stemmegivning og et moderne, responsivt design. Gjennom dette prosjektet har jeg opparbeidet meg dypere forståelse for ASP.NET, C# og MySQL, samt hvordan man bygger effektive og skalerbare webapplikasjoner."
         }
+        
     ],
     "resume": {
         "tools": [
             {
                 "icon": "wp",
                 "name": "WordPress",
-                "skill": 91
+                "skill": 96
             },
             {
                 "icon": "photoshop",
                 "name": "Photoshop",
-                "skill": 86
+                "skill": 92
             },
             {
                 "icon": "premiere",
                 "name": "Premiere Pro",
-                "skill": 82
+                "skill": 86
             }
         ],
         "languages": [
             {
                 "icon": "css",
                 "name": "CSS",
-                "skill": 94
+                "skill": 95
             },
             {
                 "icon": "js",
                 "name": "Javascript",
-                "skill": 87
-            },
-            {
-                "icon": "csharp",
-                "name": "C#",
-                "skill": 67
-            },
-            {
-                "icon": "mysql",
-                "name": "MySQL",
-                "skill": 73
+                "skill": 90
             },
             {
                 "icon": "php",
                 "name": "PHP",
-                "skill": 59
+                "skill": 85
+            },
+            {
+                "icon": "mysql",
+                "name": "MySQL",
+                "skill": 82
+            },
+            {
+                "icon": "csharp",
+                "name": "C#",
+                "skill": 64
             }
         ],
         "extra": [
             "Notion",
             "Cloudflare",
             "React JS",
+            "SCSS",
+            "Java",
             "Illustrator",
             "Freshdesk",
-            "Search console",
-            "SCSS",
-            "Java"
+            "Google Analytics",
+            "Google Seach Console"
         ]
     }
 }
