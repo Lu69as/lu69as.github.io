@@ -572,9 +572,10 @@ nav {
     }
 
     img[src*='me-noBg'] {
-        transform: rotateY(180deg);
+        /* transform: rotateY(180deg); */
         height: 550px;
         width: auto;
+        border-radius: 8px;
     }
 
     .image_carousel {
